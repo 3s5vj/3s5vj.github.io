@@ -8,7 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: #1a1a2e;
+            background: #1a1a2e; /* نفس لون الخلفية في صورتك */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -28,25 +28,21 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* هذا الجزء هو الحل النهائي للمشكلة */
-        .profile-img-container {
+        /* هذا هو التعديل الذي سيحل المشكلة نهائياً */
+        .profile-img-box {
             width: 130px;
             height: 130px;
             margin: 0 auto 20px;
-            border-radius: 50%; /* لجعل الإطار دائري */
-            overflow: hidden; /* قص أي زوائد بيضاء خارج الدائرة */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: none; /* إزالة أي خلفية */
-            border: none; /* إزالة أي إطار */
+            border-radius: 50%;
+            overflow: hidden; /* يقطع أي حواف بيضاء خارج الدائرة */
+            border: none; /* يحذف الإطار الأبيض تماماً */
+            display: block;
         }
 
-        .profile-img-container img {
+        .profile-img-box img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            border: none;
+            object-fit: cover; /* يجعل الصورة تملأ الدائرة بوضوح */
         }
 
         .username {
@@ -70,7 +66,6 @@
             margin-bottom: 15px;
             border-radius: 12px;
             font-weight: bold;
-            transition: 0.3s;
             font-size: 18px;
         }
 
@@ -93,7 +88,7 @@
 <body>
 
     <div class="container">
-        <div class="profile-img-container">
+        <div class="profile-img-box">
             <img src="1000005021.jpg" alt="">
         </div>
 
