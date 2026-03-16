@@ -3,139 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexis Neso | Profile</title>
+    <title>3s5vj Profile</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #20002c, #cbb4d4); /* خلفية متدرجة بنفسجية هادئة */
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            font-family: 'Poppins', sans-serif;
-            color: #333;
+            font-family: sans-serif;
+            color: white;
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
             padding: 40px;
             border-radius: 30px;
             text-align: center;
-            width: 90%;
-            max-width: 400px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            width: 85%;
+            max-width: 380px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .profile-img {
-            width: 130px;
-            height: 130px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
             margin: 0 auto 20px;
+            border: 3px solid #fff;
             display: block;
             object-fit: cover;
-            border: 4px solid #fff;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .user-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 5px;
-        }
-
-        .user-h-icon {
-            font-size: 32px;
-            font-weight: 700;
-            color: #fff;
-            background: #e91e63;
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .username {
-            font-size: 26px;
-            font-weight: 700;
-            color: #333;
+            font-size: 35px; /* تكبير الخط ليناسب الحروف المزخرفة */
+            font-weight: bold;
+            margin-bottom: 5px;
         }
 
         .subtitle {
-            color: #555;
+            color: #ccc;
             margin-bottom: 30px;
             font-size: 16px;
         }
 
-        .btn-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
         .btn {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            display: block;
             text-decoration: none;
             color: white;
-            padding: 15px 20px;
-            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: 0.3s;
             font-size: 18px;
-            font-weight: 600;
-            transition: all 0.3s ease;
         }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            filter: brightness(1.05);
-        }
-
-        /* تنسيق زر الانستقرام باللون المتدرج */
         .btn-insta {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            background: linear-gradient(45deg, #f09433, #bc1888);
         }
 
-        /* تنسيق زر التيك توك باللون السماوي */
         .btn-tiktok {
-            background: linear-gradient(45deg, #00f2fe 0%, #4facfe 100%);
-            color: #333;
+            background: #00f2fe;
+            color: #000;
         }
 
-        .footer-text {
-            margin-top: 35px;
-            font-size: 14px;
-            color: #666;
+        .footer {
+            font-size: 13px;
+            color: #888;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <img src="me.jpg" alt="Profile" class="profile-img">
+        <img src="1000005021.jpg" alt="Profile" class="profile-img">
 
-        <div class="user-header">
-            <div class="user-h-icon">H</div>
-            <div class="username">Alexis Neso</div>
-        </div>
+        <div class="username">𝓗 𖢱</div>
+        
         <p class="subtitle">حساباتي الرسمية</p>
 
-        <div class="btn-container">
-            <a href="https://instagram.com/3s5vj" class="btn btn-insta">
-                <span>Instagram</span>
-                <img src="instagram.svg" alt="" style="width: 24px;"> </a>
-            <a href="https://tiktok.com/@3s5vj" class="btn btn-tiktok">
-                <span>TikTok</span>
-                <img src="tiktok.svg" alt="" style="width: 24px;"> </a>
+        <div class="links">
+            <a href="https://instagram.com/3s5vj" class="btn btn-insta">Instagram</a>
+            <a href="https://tiktok.com/@3s5vj" class="btn btn-tiktok">TikTok</a>
         </div>
 
-        <p class="footer-text">اضغط على أي زر للمتابعة ✨</p>
+        <p class="footer">اضغط على أي زر للمتابعة ✨</p>
     </div>
 
 </body>
