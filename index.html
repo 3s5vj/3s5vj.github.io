@@ -30,7 +30,7 @@
             text-align: center;
             width: 85%;
             max-width: 360px;
-            border: 1px solid rgba(255, 255, 255, 0.05); /* إطار ناعم */
+            border: 1px solid rgba(212, 175, 55, 0.05); /* إطار ناعم */
             box-shadow: 0 15px 35px rgba(0,0,0,0.5);
         }
 
@@ -59,38 +59,29 @@
             color: #b76e79; /* أيقونة شخص ذهبية وردية */
         }
 
-        /* --- تطبيق تأثير اللمعان المتحرك على العنوان --- */
+        /* --- تطبيق تأثير التوهج النيوني النابض على العنوان --- */
         h2.official-title {
             font-size: 19px;
             font-weight: bold;
             margin-bottom: 30px;
             margin-top: 0;
-            /* اللون الأساسي ذهبي */
+            /* اللون الأساسي ذهبي ساطع وثابت */
             color: #d4af37;
             text-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
-            position: relative;
-            overflow: hidden; /* لمنع اللمعان من الخروج عن النص */
+            /* حركة التوهج النيوني النابض */
+            animation: neonPulseGold 1.5s infinite alternate ease-in-out;
             line-height: 1.5; /* لمنع النجوم من القص */
         }
 
-        /* تأثير اللمعان (Shine Effect) للعناوين */
-        h2.official-title::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -150%; /* البداية من خارج النص */
-            width: 150%; /* شريط اللمعان واسع */
-            height: 100%;
-            /* شريط ضوئي أبيض شفاف ساطع */
-            background: linear-gradient(
-                90deg,
-                rgba(252, 246, 186, 0) 0%,
-                rgba(252, 246, 186, 0.6) 50%,
-                rgba(252, 246, 186, 0) 100%
-            );
-            /* حركة اللمعان المستمرة */
-            animation: shineGoldContinuous 2.5s infinite linear;
-            pointer-events: none; /* لمنع التأثير على النقر */
+        /* أنيميشن التوهج النيوني الذهبي النابض */
+        @keyframes neonPulseGold {
+            0% {
+                text-shadow: 0 0 5px rgba(212, 175, 55, 0.3), 0 0 10px rgba(212, 175, 55, 0.3);
+            }
+            100% {
+                /* زيادة سطوع التوهج وتوسيع الهالة */
+                text-shadow: 0 0 10px rgba(212, 175, 55, 0.8), 0 0 20px rgba(212, 175, 55, 0.8), 0 0 30px rgba(212, 175, 55, 0.8);
+            }
         }
 
         .links-area {
@@ -157,43 +148,27 @@
             color: rgba(255, 255, 255, 0.7);
         }
 
-        /* --- تطبيق تأثير اللمعان المتحرك على "وصول مميز" --- */
+        /* --- تطبيق تأثير التوهج النيوني النابض على "وصول مميز" --- */
         .gold-feature {
             display: block;
             font-weight: bold;
             font-size: 15px;
             margin-top: 10px;
-            /* اللون الأساسي ذهبي أغمق قليلاً */
+            /* اللون الأساسي ذهبي أغمق قليلاً وثابت */
             color: #b38728;
-            position: relative;
-            overflow: hidden;
+            /* حركة التوهج النيوني النابض (أبطأ قليلاً لـ "وصول مميز") */
+            animation: neonPulseGoldSubtle 2s infinite alternate ease-in-out;
             line-height: 1.5; /* لمنع النجوم من القص */
         }
 
-        /* تأثير اللمعان (Shine Effect) للميزة */
-        .gold-feature::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -150%; /* البداية من خارج النص */
-            width: 150%;
-            height: 100%;
-            /* شريط ضوئي أبيض شفاف ساطع */
-            background: linear-gradient(
-                90deg,
-                rgba(252, 246, 186, 0) 0%,
-                rgba(252, 246, 186, 0.6) 50%,
-                rgba(252, 246, 186, 0) 100%
-            );
-            /* حركة اللمعان المستمرة */
-            animation: shineGoldContinuous 2.5s infinite linear;
-            pointer-events: none;
-        }
-
-        /* أنيميشن اللمعان المستمر */
-        @keyframes shineGoldContinuous {
-            to {
-                left: 100%; /* التحرك لخارج النص من الجهة الأخرى */
+        /* أنيميشن التوهج النيوني الذهبي النابض لـ "وصول مميز" (أنعم) */
+        @keyframes neonPulseGoldSubtle {
+            0% {
+                text-shadow: 0 0 3px rgba(179, 135, 40, 0.3), 0 0 6px rgba(179, 135, 40, 0.3);
+            }
+            100% {
+                /* زيادة سطوع التوهج وتوسيع الهالة */
+                text-shadow: 0 0 8px rgba(179, 135, 40, 0.8), 0 0 16px rgba(179, 135, 40, 0.8), 0 0 24px rgba(179, 135, 40, 0.8);
             }
         }
     </style>
