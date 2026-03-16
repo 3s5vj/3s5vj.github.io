@@ -5,42 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3s5vj</title>
     <style>
-        body { margin: 0; background: #1a1a2e; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: sans-serif; color: white; }
-        .container { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); padding: 40px; border-radius: 30px; text-align: center; width: 85%; max-width: 380px; border: 1px solid rgba(255, 255, 255, 0.1); }
-        
-        /* هذا الجزء هو "المقص" الحقيقي للحواف البيضاء */
-        .img-wrapper {
-            width: 140px;
-            height: 140px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            overflow: hidden; /* يمسح أي شيء خارج الدائرة */
+        body {
+            margin: 0;
+            padding: 0;
+            background: #1a1a2e; /* خلفية داكنة ثابتة لمنع أي تداخل ألوان */
             display: flex;
             justify-content: center;
             align-items: center;
-            border: none;
-            background: none;
-        }
-        .img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* يملأ الدائرة ويقص الحواف الزائدة */
+            min-height: 100vh;
+            font-family: sans-serif;
+            color: white;
         }
 
-        .username { font-size: 42px; font-weight: bold; margin-bottom: 20px; }
-        .btn { display: block; text-decoration: none; color: white; padding: 15px; margin-bottom: 15px; border-radius: 12px; font-weight: bold; }
-        .btn-insta { background: linear-gradient(45deg, #f09433, #bc1888); }
-        .btn-tiktok { background: #00f2fe; color: #000; }
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 30px;
+            text-align: center;
+            width: 85%;
+            max-width: 380px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* تصميم الدائرة التي تحتوي على الحرف المزخرف */
+        .profile-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #ec4899, #8b5cf6);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px; /* حجم كبير للحرف ليملأ الدائرة */
+            color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border: none;
+        }
+
+        .username {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .subtitle {
+            color: #ccc;
+            margin-bottom: 30px;
+            font-size: 18px;
+            display: block;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 16px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: transform 0.2s ease;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-insta {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        .btn-tiktok {
+            background: #00f2fe;
+            color: #000;
+        }
+
+        .footer {
+            font-size: 14px;
+            color: #aaa;
+            margin-top: 30px;
+            display: block;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <div class="img-wrapper">
-            <img src="1000005021.jpg" alt="">
-        </div>
+        <div class="profile-icon">𝓗</div>
+
         <div class="username">𝓗 𖢱</div>
-        <a href="https://instagram.com/3s5vj" class="btn btn-insta">Instagram</a>
-        <a href="https://tiktok.com/@3s5vj" class="btn btn-tiktok">TikTok</a>
+        
+        <span class="subtitle">حساباتي الرسمية</span>
+
+        <div class="links">
+            <a href="https://instagram.com/3s5vj" class="btn btn-insta">Instagram</a>
+            <a href="https://tiktok.com/@3s5vj" class="btn btn-tiktok">TikTok</a>
+        </div>
+
+        <div class="footer">
+            اضغط على أي زر للمتابعة ✨
+        </div>
     </div>
+
 </body>
 </html>
