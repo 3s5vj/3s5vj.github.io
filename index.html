@@ -13,82 +13,48 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: #1a0f0a; /* بني غامق ملكي */
-            font-family: 'Segoe UI', sans-serif;
+            background: #1a0f0a; /* بني غامق فخم */
+            font-family: 'Segoe UI', Tahoma, sans-serif;
             color: white;
-            overflow: hidden;
         }
 
         .container {
-            background: rgba(43, 29, 23, 0.7);
-            backdrop-filter: blur(20px);
-            padding: 40px;
-            border-radius: 30px;
+            background: rgba(43, 29, 23, 0.8);
+            backdrop-filter: blur(15px);
+            padding: 45px 30px;
+            border-radius: 25px;
             text-align: center;
             width: 85%;
             max-width: 340px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            border: 1px solid rgba(183, 110, 121, 0.2); /* إطار ذهبي وردي خفيف */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
         }
 
+        /* أيقونة الشخص ثابتة وراقية */
         .profile-area {
-            display: flex;
-            justify-content: center;
             margin-bottom: 25px;
         }
 
         .user-circle {
-            width: 85px;
-            height: 85px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            border: 3px solid #b76e79; /* ذهبي وردي مطفي */
-            display: flex;
+            border: 2px solid #b76e79; /* ذهبي وردي */
+            display: inline-flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 0 15px rgba(183, 110, 121, 0.2);
-        }
-
-        .user-circle i {
-            font-size: 45px;
             color: #b76e79;
+            font-size: 35px;
         }
 
-        /* --- أنيميشن اللمعان الهادئ والواضح --- */
-        .shine-text {
-            display: inline-block;
-            position: relative;
-            font-weight: bold;
-            color: #d4af37; /* لون ذهبي أساسي */
-            overflow: hidden;
-            /* تدرج لوني عريض لجعل اللمعان ناعماً وملاحظاً */
-            background: linear-gradient(to right, 
-                #d4af37 0%, 
-                #d4af37 40%, 
-                #ffffff 50%, 
-                #d4af37 60%, 
-                #d4af37 100%);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            /* تم تقليل السرعة إلى 4 ثوانٍ ليكون مريحاً جداً */
-            animation: elegantShine 4s infinite ease-in-out;
-        }
-
+        /* نصوص ثابتة بألوان فخمة بدون حركة لمعان */
         .official-title {
-            font-size: 20px;
-            margin-bottom: 30px;
-        }
-
-        .gold-feature {
-            font-size: 16px;
-            margin-top: 10px;
-        }
-
-        /* حركة المسح الضوئي الهادئة */
-        @keyframes elegantShine {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
+            display: block;
+            font-size: 19px;
+            font-weight: bold;
+            color: #d4af37; /* ذهبي مطفي */
+            margin-bottom: 35px;
+            letter-spacing: 1px;
         }
 
         .links {
@@ -101,39 +67,47 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             text-decoration: none;
             color: white;
-            padding: 15px;
+            padding: 16px;
             border-radius: 12px;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 16px;
             transition: all 0.3s ease;
             border: none;
         }
 
-        /* توهج الأزرار عند الضغط */
+        /* توهج الأزرار عند اللمس فقط (إحساس تقني احترافي) */
         .btn-insta {
             background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
         }
-        .btn-insta:hover, .btn-insta:active {
-            box-shadow: 0 0 25px rgba(220, 39, 67, 0.8); 
-            filter: brightness(1.2);
+        .btn-insta:hover {
+            box-shadow: 0 0 20px rgba(220, 39, 67, 0.6);
+            transform: translateY(-2px);
         }
 
         .btn-tiktok {
             background: #000;
             border: 1px solid #333;
         }
-        .btn-tiktok:hover, .btn-tiktok:active {
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
-            filter: brightness(1.2);
+        .btn-tiktok:hover {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
         }
 
         .footer {
+            margin-top: 40px;
             font-size: 13px;
             color: #8a7b75;
-            margin-top: 35px;
+        }
+
+        .gold-feature {
+            display: block;
+            margin-top: 10px;
+            color: #d4af37;
+            font-weight: bold;
+            font-size: 15px;
         }
     </style>
 </head>
@@ -146,9 +120,7 @@
             </div>
         </div>
 
-        <div class="official-title">
-            <span class="shine-text">✨ حساباتي الرسمية ✨</span>
-        </div>
+        <span class="official-title">✨ حساباتي الرسمية ✨</span>
 
         <div class="links">
             <a href="https://www.instagram.com/3s5vj" class="btn btn-insta" target="_blank">
@@ -161,9 +133,7 @@
 
         <div class="footer">
              اضغط للمتابعة
-             <div class="gold-feature">
-                <span class="shine-text">✨ وصول مميز ✨</span>
-             </div>
+             <span class="gold-feature">✨ وصول مميز ✨</span>
         </div>
     </div>
 
