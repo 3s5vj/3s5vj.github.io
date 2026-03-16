@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3s5vj | Official Presence</title>
+    <title>3s5vj</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
@@ -13,29 +13,25 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            /* خلفية بني غامق ملكي */
-            background: #1a0f0a;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a0f0a; /* بني غامق ملكي */
+            font-family: 'Segoe UI', sans-serif;
             color: white;
             overflow: hidden;
         }
 
-        /* حاوية الزجاج البلوري */
-        .glass-container {
+        .container {
             background: rgba(43, 29, 23, 0.7);
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
             padding: 40px;
             border-radius: 30px;
             text-align: center;
             width: 85%;
-            max-width: 360px;
-            border: 1px solid rgba(212, 175, 55, 0.05); /* إطار ناعم */
+            max-width: 340px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
             box-shadow: 0 15px 35px rgba(0,0,0,0.5);
         }
 
-        /* قسم الأيقونة العلوية */
-        .profile-section {
+        .profile-area {
             display: flex;
             justify-content: center;
             margin-bottom: 25px;
@@ -45,160 +41,125 @@
             width: 85px;
             height: 85px;
             border-radius: 50%;
-            /* الإطار الذهبي الوردي المطفي */
-            border: 3px solid #b76e79; 
+            border: 3px solid #b76e79; /* ذهبي وردي */
             display: flex;
             justify-content: center;
             align-items: center;
-            background: transparent;
             box-shadow: 0 0 15px rgba(183, 110, 121, 0.2);
         }
 
         .user-circle i {
             font-size: 45px;
-            color: #b76e79; /* أيقونة شخص ذهبية وردية */
+            color: #b76e79;
         }
 
-        /* --- تطبيق تأثير التوهج النيوني النابض على العنوان --- */
-        h2.official-title {
-            font-size: 19px;
+        /* --- تأثير اللمعان القديم بوضوح عالي --- */
+        .shine-text {
+            display: inline-block;
+            position: relative;
             font-weight: bold;
+            color: #d4af37; /* لون ذهبي أساسي */
+            overflow: hidden; /* ضروري لقص اللمعان */
+            background: linear-gradient(to right, #d4af37 0%, #fff 50%, #d4af37 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* حركة المسح الضوئي */
+            animation: clearShine 2s infinite linear;
+        }
+
+        .official-title {
+            font-size: 20px;
             margin-bottom: 30px;
-            margin-top: 0;
-            /* اللون الأساسي ذهبي ساطع وثابت */
-            color: #d4af37;
-            text-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
-            /* حركة التوهج النيوني النابض */
-            animation: neonPulseGold 1.5s infinite alternate ease-in-out;
-            line-height: 1.5; /* لمنع النجوم من القص */
         }
 
-        /* أنيميشن التوهج النيوني الذهبي النابض */
-        @keyframes neonPulseGold {
-            0% {
-                text-shadow: 0 0 5px rgba(212, 175, 55, 0.3), 0 0 10px rgba(212, 175, 55, 0.3);
-            }
-            100% {
-                /* زيادة سطوع التوهج وتوسيع الهالة */
-                text-shadow: 0 0 10px rgba(212, 175, 55, 0.8), 0 0 20px rgba(212, 175, 55, 0.8), 0 0 30px rgba(212, 175, 55, 0.8);
-            }
+        .gold-feature {
+            font-size: 16px;
+            margin-top: 10px;
         }
 
-        .links-area {
+        /* أنيميشن اللمعان الواضح جداً */
+        @keyframes clearShine {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .links {
             display: flex;
             flex-direction: column;
-            gap: 15px; /* المسافة بين الأزرار */
+            gap: 15px;
         }
 
-        /* تنسيق الأزرار الأساسي */
         .btn {
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 10px;
             text-decoration: none;
             color: white;
-            padding: 16px;
+            padding: 15px;
             border-radius: 12px;
             font-weight: bold;
             font-size: 16px;
-            transition: transform 0.2s ease, box-shadow 0.3s ease, filter 0.2s ease;
-            position: relative;
+            transition: all 0.3s ease;
             border: none;
-            cursor: pointer;
         }
 
-        /* تأثير التفاعل عند الضغط */
-        .btn:active {
-            transform: scale(0.97);
-        }
-
-        /* الأيقونات داخل الأزرار */
-        .btn i {
-            margin-left: 10px; /* مسافة على يسار الأيقونة للنص العربي */
-            font-size: 20px;
-        }
-
-        /* لون Instagram الأصلي وتوهج وردي مطابق */
+        /* توهج الأزرار بنفس لونها عند الضغط */
         .btn-insta {
             background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
         }
-
         .btn-insta:hover, .btn-insta:active {
-            /* توهج وردي مطابق للون الزر عند الضغط/التمرير */
-            box-shadow: 0 0 25px rgba(220, 39, 67, 0.7);
-            filter: brightness(1.2); /* زيادة السطوع خفيفاً */
+            box-shadow: 0 0 25px rgba(220, 39, 67, 0.8); 
+            filter: brightness(1.2);
+            transform: translateY(-2px);
         }
 
-        /* لون TikTok الأصلي (أسود) وتوهج أبيض مطابق */
         .btn-tiktok {
-            background-color: #000000;
+            background: #000;
             border: 1px solid #333;
         }
-
         .btn-tiktok:hover, .btn-tiktok:active {
-            /* توهج أبيض مطابق للتيك توك */
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-            filter: brightness(1.2); /* زيادة السطوع خفيفاً */
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+            filter: brightness(1.2);
+            transform: translateY(-2px);
         }
 
-        /* النص السفلي */
-        .footer-text {
+        .footer {
             font-size: 13px;
-            margin-top: 30px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        /* --- تطبيق تأثير التوهج النيوني النابض على "وصول مميز" --- */
-        .gold-feature {
-            display: block;
-            font-weight: bold;
-            font-size: 15px;
-            margin-top: 10px;
-            /* اللون الأساسي ذهبي أغمق قليلاً وثابت */
-            color: #b38728;
-            /* حركة التوهج النيوني النابض (أبطأ قليلاً لـ "وصول مميز") */
-            animation: neonPulseGoldSubtle 2s infinite alternate ease-in-out;
-            line-height: 1.5; /* لمنع النجوم من القص */
-        }
-
-        /* أنيميشن التوهج النيوني الذهبي النابض لـ "وصول مميز" (أنعم) */
-        @keyframes neonPulseGoldSubtle {
-            0% {
-                text-shadow: 0 0 3px rgba(179, 135, 40, 0.3), 0 0 6px rgba(179, 135, 40, 0.3);
-            }
-            100% {
-                /* زيادة سطوع التوهج وتوسيع الهالة */
-                text-shadow: 0 0 8px rgba(179, 135, 40, 0.8), 0 0 16px rgba(179, 135, 40, 0.8), 0 0 24px rgba(179, 135, 40, 0.8);
-            }
+            color: #8a7b75;
+            margin-top: 35px;
         }
     </style>
 </head>
 <body>
 
-    <div class="glass-container">
-        <div class="profile-section">
+    <div class="container">
+        <div class="profile-area">
             <div class="user-circle">
                 <i class="fas fa-user"></i>
             </div>
         </div>
 
-        <h2 class="official-title">✨ حساباتي الرسمية ✨</h2>
+        <div class="official-title">
+            <span class="shine-text">✨ حساباتي الرسمية ✨</span>
+        </div>
 
-        <div class="links-area">
-            <a href="https://instagram.com/3s5vj" class="btn btn-insta" target="_blank">
-                <i class="fab fa-instagram"></i>
-                Instagram
+        <div class="links">
+            <a href="https://www.instagram.com/3s5vj" class="btn btn-insta" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
             </a>
-
-            <a href="https://tiktok.com/@3s5vj" class="btn btn-tiktok" target="_blank">
-                <i class="fab fa-tiktok"></i>
-                TikTok
+            <a href="https://www.tiktok.com/@3s5vj" class="btn btn-tiktok" target="_blank">
+                <i class="fab fa-tiktok"></i> TikTok
             </a>
         </div>
 
-        <div class="footer-text">
-            اضغط للمتابعة
-            <span class="gold-feature">✨ وصول مميز ✨</span>
+        <div class="footer">
+             اضغط للمتابعة
+             <div class="gold-feature">
+                <span class="shine-text">✨ وصول مميز ✨</span>
+             </div>
         </div>
     </div>
 
