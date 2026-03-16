@@ -3,126 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3s5vj</title>
+    <title>حساباتي الرسمية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             margin: 0;
             padding: 0;
-            background: #0d0d0d; /* أسود ملكي عميق */
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            /* خلفية بتدرج لوني مثل الصورة المرسلة */
+            background: linear-gradient(135deg, #1e3aed 0%, #a855f7 100%);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #e0e0e0;
+            color: white;
+            overflow: hidden; /* لمنع شريط التمرير */
         }
 
-        .container {
-            background: #141414; /* خلفية الواجهة أسود مطفي */
+        /* حاوية الزجاج البلوري centered */
+        .glass-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             padding: 40px;
             border-radius: 30px;
             text-align: center;
             width: 85%;
             max-width: 380px;
-            border: 1px solid #2a2a2a;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
         }
 
-        /* دائرة الحرف الذهبية */
-        .profile-icon {
-            width: 110px;
-            height: 110px;
-            background: #1a1a1a;
-            border: 2px solid #d4af37; /* ذهبي أصلي */
-            border-radius: 50%;
-            margin: 0 auto 25px;
+        /* قسم الأيقونات العلوية الكبيرة */
+        .header-icons {
             display: flex;
             justify-content: center;
-            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .header-icons i {
             font-size: 60px;
-            color: #d4af37;
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            color: rgba(255, 255, 255, 0.9);
+            /* تأثير ظل خفيف للأيقونات */
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
         }
 
-        .username {
-            font-size: 40px;
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: #fff;
+        h2.subtitle {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            margin-top: 0;
+            color: rgba(255, 255, 255, 0.9);
         }
 
-        .subtitle {
-            color: #888;
-            margin-bottom: 35px;
-            font-size: 17px;
-            display: block;
-        }
-
-        .links {
+        .links-area {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 15px; /* المسافة بين الأزرار */
         }
 
+        /* تنسيق الأزرار الأساسي */
         .btn {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-decoration: none;
-            color: #fff;
+            color: white;
             padding: 16px;
             border-radius: 15px;
             font-weight: bold;
             font-size: 18px;
-            transition: 0.3s;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
             border: none;
+            cursor: pointer;
         }
 
-        /* ألوان كاملة ومتناسقة للأزرار */
-        .btn-insta {
-            background: #b81d5b; /* لون عنابي فخم متناسق مع الذهبي */
-        }
-
-        .btn-tiktok {
-            background: #2a2a2a; /* أسود رصاصي غامق */
-            border: 1px solid #444;
-        }
-
+        /* تأثير عند تمرير الماوس/الضغط */
         .btn:hover {
-            transform: translateY(-3px);
-            filter: brightness(1.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
-        /* النص السفلي بالعربي */
-        .footer {
+        /* الأيقونات داخل الأزرار */
+        .btn i {
+            margin-left: 10px; /* مسافة على يسار الأيقونة للنص العربي */
+            font-size: 20px;
+        }
+
+        /* لون Instagram الأصلي (تدرج لوني) */
+        .btn-insta {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            box-shadow: 0 4px 15px rgba(220, 39, 67, 0.4);
+        }
+
+        /* لون TikTok الأصلي (أسود مع تأثير نيوني خفيف) */
+        .btn-tiktok {
+            background-color: #000000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255,255,255,0.1); /* إطار ناعم جداً للتحديد */
+        }
+
+        /* إضافة لمسة نيوني لتيك توك عند الحافة (اختياري، للفخامة) */
+        .btn-tiktok::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 15px;
+            box-shadow: inset 0 0 10px rgba(37, 244, 238, 0.3), inset 0 0 10px rgba(254, 44, 85, 0.3);
+            pointer-events: none;
+        }
+
+        /* النص السفلي */
+        .footer-text {
             font-size: 14px;
-            color: #666;
-            margin-top: 35px;
-            display: block;
+            margin-top: 30px;
+            color: rgba(255, 255, 255, 0.7);
         }
 
-        .gold-text {
-            color: #d4af37;
+        /* تنسيق جملة التمييز باللون الذهبي اللامع */
+        .gold-feature {
+            display: block;
+            font-size: 16px;
             font-weight: bold;
+            margin-top: 15px;
+            /* تأثير لون ذهبي لامع */
+            background: linear-gradient(90deg, #bf953f, #fcf6ba, #b38728, #fcf6ba, #bf953f);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            /* إضافة ظل وهج ذهبي خفيف */
+            filter: drop-shadow(0 0 2px rgba(252, 246, 186, 0.5));
+            animation: gold-shine 3s infinite linear; /* أنيميشن لمعان اختياري */
+            background-size: 200% auto;
         }
+
+        /* أنيميشن بسيط لجعل الذهب يلمع */
+        @keyframes gold-shine {
+            to { background-position: 200% center; }
+        }
+
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="profile-icon">𝓗</div>
-
-        <div class="username">𝓗 𖢱</div>
-        
-        <span class="subtitle">حساباتي الرسمية</span>
-
-        <div class="links">
-            <a href="https://instagram.com/3s5vj" class="btn btn-insta">Instagram</a>
-            <a href="https://tiktok.com/@3s5vj" class="btn btn-tiktok">TikTok</a>
+    <div class="glass-container">
+        <div class="header-icons">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-tiktok"></i>
         </div>
 
-        <div class="footer">
-             ✨ <span class="gold-text">وصول مميز</span> ✨
-             <br>
-             اضغط على أي زر للمتابعة
+        <h2 class="subtitle">حساباتي الرسمية</h2>
+
+        <div class="links-area">
+            <a href="رابط_حساب_انستغرام_هنا" class="btn btn-insta" target="_blank">
+                <i class="fab fa-instagram"></i>
+                Instagram
+            </a>
+
+            <a href="رابط_حساب_تيك_توك_هنا" class="btn btn-tiktok" target="_blank">
+                <i class="fab fa-tiktok"></i>
+                TikTok
+            </a>
+        </div>
+
+        <div class="footer-text">
+            اضغط على أي زر للمتابعة
+            <span class="gold-feature">✨ وصول مميز ✨</span>
         </div>
     </div>
 
