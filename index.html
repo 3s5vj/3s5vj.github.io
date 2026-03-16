@@ -4,48 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3s5vj</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: #0d0d0d; /* أسود ملكي عميق */
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            font-family: sans-serif;
-            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #e0e0e0;
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            padding: 50px 40px;
+            background: #141414; /* خلفية الواجهة أسود مطفي */
+            padding: 40px;
             border-radius: 30px;
             text-align: center;
             width: 85%;
             max-width: 380px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid #2a2a2a;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
         }
 
-        .icons-header {
+        /* دائرة الحرف الذهبية */
+        .profile-icon {
+            width: 110px;
+            height: 110px;
+            background: #1a1a1a;
+            border: 2px solid #d4af37; /* ذهبي أصلي */
+            border-radius: 50%;
+            margin: 0 auto 25px;
             display: flex;
             justify-content: center;
-            gap: 25px;
-            margin-bottom: 35px;
+            align-items: center;
+            font-size: 60px;
+            color: #d4af37;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
         }
 
-        .icons-header i {
-            font-size: 50px;
-            color: #fff; /* أيقونات بيضاء بسيطة ونظيفة */
-            filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+        .username {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #fff;
         }
 
         .subtitle {
-            color: #ccc;
-            margin-bottom: 30px;
-            font-size: 18px;
+            color: #888;
+            margin-bottom: 35px;
+            font-size: 17px;
             display: block;
         }
 
@@ -56,53 +65,42 @@
         }
 
         .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
+            display: block;
             text-decoration: none;
             color: #fff;
-            padding: 18px;
+            padding: 16px;
             border-radius: 15px;
             font-weight: bold;
             font-size: 18px;
-            transition: all 0.3s ease; /* سرعة التوهج */
+            transition: 0.3s;
             border: none;
-            position: relative;
         }
 
-        /* لون الانستقرام الأصلي */
+        /* ألوان كاملة ومتناسقة للأزرار */
         .btn-insta {
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            background: #b81d5b; /* لون عنابي فخم متناسق مع الذهبي */
         }
 
-        /* لون تيك توك الأصلي */
         .btn-tiktok {
-            background: #000; /* أسود صريح */
+            background: #2a2a2a; /* أسود رصاصي غامق */
             border: 1px solid #444;
         }
 
-        /* --- تأثير التوهج والبياض عند الضغط أو المرور --- */
         .btn:hover {
             transform: translateY(-3px);
-            filter: brightness(1.3); /* يلمع الزر ويصبح أفتح */
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); /* توهج أبيض حول الزر */
+            filter: brightness(1.2);
         }
 
-        .btn:active {
-            transform: scale(0.95); /* ينضغط الزر للداخل */
-            filter: brightness(1.5); /* زيادة اللمعان لحظة الضغط */
-        }
-
+        /* النص السفلي بالعربي */
         .footer {
             font-size: 14px;
-            color: #aaa;
-            margin-top: 40px;
+            color: #666;
+            margin-top: 35px;
             display: block;
         }
 
-        .highlight {
-            color: #00f2fe; /* تمييز باللون السماوي */
+        .gold-text {
+            color: #d4af37;
             font-weight: bold;
         }
     </style>
@@ -110,24 +108,19 @@
 <body>
 
     <div class="container">
-        <div class="icons-header">
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-tiktok"></i>
-        </div>
+        <div class="profile-icon">𝓗</div>
+
+        <div class="username">𝓗 𖢱</div>
         
         <span class="subtitle">حساباتي الرسمية</span>
 
         <div class="links">
-            <a href="https://instagram.com/3s5vj" class="btn btn-insta">
-                <i class="fab fa-instagram"></i> Instagram
-            </a>
-            <a href="https://tiktok.com/@3s5vj" class="btn btn-tiktok">
-                <i class="fab fa-tiktok"></i> TikTok
-            </a>
+            <a href="https://instagram.com/3s5vj" class="btn btn-insta">Instagram</a>
+            <a href="https://tiktok.com/@3s5vj" class="btn btn-tiktok">TikTok</a>
         </div>
 
         <div class="footer">
-             ✨ <span class="highlight">وصول مميز</span> ✨
+             ✨ <span class="gold-text">وصول مميز</span> ✨
              <br>
              اضغط على أي زر للمتابعة
         </div>
