@@ -8,7 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: #1a1a2e; /* لون الواجهة الأساسي */
+            background: #1a1a2e;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -28,17 +28,25 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .profile-img {
+        /* هذا الجزء هو الحل النهائي للمشكلة */
+        .profile-img-container {
             width: 130px;
             height: 130px;
-            border-radius: 50%;
             margin: 0 auto 20px;
-            display: block;
+            border-radius: 50%; /* لجعل الإطار دائري */
+            overflow: hidden; /* قص أي زوائد بيضاء خارج الدائرة */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: none; /* إزالة أي خلفية */
+            border: none; /* إزالة أي إطار */
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            /* التعديل الجذري هنا */
-            border: none !important; /* حذف أي إطار نهائياً */
-            mix-blend-mode: lighten; /* هذا السطر سيجعل اللون الأبيض في الصورة يختفي ويندمج مع البنفسجي */
-            filter: contrast(1.1); /* تحسين وضوح الصورة بعد الدمج */
+            border: none;
         }
 
         .username {
@@ -85,7 +93,9 @@
 <body>
 
     <div class="container">
-        <img src="1000005021.jpg" alt="" class="profile-img">
+        <div class="profile-img-container">
+            <img src="1000005021.jpg" alt="">
+        </div>
 
         <div class="username">𝓗 𖢱</div>
         
