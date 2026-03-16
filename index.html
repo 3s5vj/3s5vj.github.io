@@ -8,7 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: #1a1a2e; /* لون الواجهة الأساسي */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -35,13 +35,14 @@
             margin: 0 auto 20px;
             display: block;
             object-fit: cover;
-            /* جعل الإطار شفاف ومخفي */
-            border: none;
-            background: transparent;
+            /* التعديل الجذري هنا */
+            border: none !important; /* حذف أي إطار نهائياً */
+            mix-blend-mode: lighten; /* هذا السطر سيجعل اللون الأبيض في الصورة يختفي ويندمج مع البنفسجي */
+            filter: contrast(1.1); /* تحسين وضوح الصورة بعد الدمج */
         }
 
         .username {
-            font-size: 42px; /* حجم كبير للحروف المزخرفة */
+            font-size: 42px;
             font-weight: bold;
             margin-bottom: 5px;
             display: block;
