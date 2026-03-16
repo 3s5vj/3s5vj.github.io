@@ -41,7 +41,7 @@
             width: 85px;
             height: 85px;
             border-radius: 50%;
-            border: 3px solid #b76e79; /* ذهبي وردي */
+            border: 3px solid #b76e79; /* ذهبي وردي مطفي */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -53,20 +53,26 @@
             color: #b76e79;
         }
 
-        /* --- تأثير اللمعان القديم بوضوح عالي --- */
+        /* --- أنيميشن اللمعان الهادئ والواضح --- */
         .shine-text {
             display: inline-block;
             position: relative;
             font-weight: bold;
             color: #d4af37; /* لون ذهبي أساسي */
-            overflow: hidden; /* ضروري لقص اللمعان */
-            background: linear-gradient(to right, #d4af37 0%, #fff 50%, #d4af37 100%);
+            overflow: hidden;
+            /* تدرج لوني عريض لجعل اللمعان ناعماً وملاحظاً */
+            background: linear-gradient(to right, 
+                #d4af37 0%, 
+                #d4af37 40%, 
+                #ffffff 50%, 
+                #d4af37 60%, 
+                #d4af37 100%);
             background-size: 200% auto;
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            /* حركة المسح الضوئي */
-            animation: clearShine 2s infinite linear;
+            /* تم تقليل السرعة إلى 4 ثوانٍ ليكون مريحاً جداً */
+            animation: elegantShine 4s infinite ease-in-out;
         }
 
         .official-title {
@@ -79,8 +85,8 @@
             margin-top: 10px;
         }
 
-        /* أنيميشن اللمعان الواضح جداً */
-        @keyframes clearShine {
+        /* حركة المسح الضوئي الهادئة */
+        @keyframes elegantShine {
             0% { background-position: -200% center; }
             100% { background-position: 200% center; }
         }
@@ -106,14 +112,13 @@
             border: none;
         }
 
-        /* توهج الأزرار بنفس لونها عند الضغط */
+        /* توهج الأزرار عند الضغط */
         .btn-insta {
             background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
         }
         .btn-insta:hover, .btn-insta:active {
             box-shadow: 0 0 25px rgba(220, 39, 67, 0.8); 
             filter: brightness(1.2);
-            transform: translateY(-2px);
         }
 
         .btn-tiktok {
@@ -123,7 +128,6 @@
         .btn-tiktok:hover, .btn-tiktok:active {
             box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
             filter: brightness(1.2);
-            transform: translateY(-2px);
         }
 
         .footer {
