@@ -3,49 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3s5vj | الملف الشخصي</title>
+    <title>3s5vj | Profile</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        body { 
-            background-color: #000000; color: #ffffff; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            display: flex; justify-content: center; align-items: center; 
-            height: 100vh; margin: 0; 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 50%, #0e7490 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            position: relative;
         }
-        .card { 
-            background: #111111; width: 85%; max-width: 350px; 
-            padding: 40px 20px; border-radius: 30px; 
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.05); 
-            text-align: center; border: 1px solid #222;
+
+        /* العناصر المتحركة في الخلفية */
+        .bg-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.2;
+            z-index: 0;
+            animation: pulse 4s infinite ease-in-out;
         }
-        .profile-img {
-            width: 80px; height: 80px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-            border-radius: 50%; margin: 0 auto 15px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 30px; font-weight: bold; color: #fff;
+        .blob1 { top: 10%; left: 10%; width: 300px; height: 300px; background: #22d3ee; }
+        .blob2 { bottom: 10%; right: 10%; width: 400px; height: 400px; background: #a855f7; animation-delay: 1s; }
+        .blob3 { top: 50%; left: 50%; transform: translate(-50%, -50%); width: 250px; height: 250px; background: #f472b6; animation-delay: 2s; }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.2; }
+            50% { transform: scale(1.1); opacity: 0.3; }
         }
-        h1 { margin: 10px 0; font-size: 24px; color: #fff; }
-        p { color: #666; margin-bottom: 30px; font-size: 14px; }
-        .links { display: flex; flex-direction: column; gap: 15px; }
-        .btn { 
-            text-decoration: none; color: #fff; background: #1a1a1a; 
-            padding: 14px; border-radius: 15px; font-weight: 600;
-            transition: 0.3s; border: 1px solid #333;
+
+        /* الكارت الرئيسي */
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 40px 30px;
+            width: 90%;
+            max-width: 400px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            position: relative;
+            z-index: 10;
         }
-        .btn:hover { 
-            background: #fff; color: #000; transform: scale(1.05);
+
+        .profile-wrapper {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
         }
+
+        .profile-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 { font-size: 2.5rem; color: white; margin-bottom: 8px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .subtitle { color: #a5f3fc; font-size: 1.1rem; margin-bottom: 30px; }
+
+        .links { display: flex; flex-direction: column; gap: 16px; }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-insta { background: linear-gradient(to right, #a855f7, #ec4899, #f43f5e); }
+        .btn-tiktok { background: linear-gradient(to right, #22d3ee, #3b82f6); }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer { margin-top: 30px; color: #cffafe; font-size: 0.9rem; }
     </style>
 </head>
 <body>
+
+    <div class="bg-blob blob1"></div>
+    <div class="bg-blob blob2"></div>
+    <div class="bg-blob blob3"></div>
+
     <div class="card">
-        <div class="profile-img">3</div>
-        <h1>@3s5vj</h1>
-        <p>حساباتي الرسمية</p>
-        
+        <div class="profile-wrapper">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=3s5vj" alt="Profile">
+        </div>
+
+        <h1>𝓗 𖢱</h1>
+        <p class="subtitle">حساباتي الرسمية</p>
+
         <div class="links">
-            <a href="https://www.instagram.com/3s5vj" class="btn">انستقرام</a>
-            <a href="https://www.tiktok.com/@3s5vj" class="btn">تيك توك</a>
+            <a href="https://instagram.com/3s5vj" target="_blank" class="btn btn-insta">
+                <i data-lucide="instagram"></i>
+                <span>Instagram</span>
+            </a>
+
+            <a href="https://tiktok.com/@3s5vj" target="_blank" class="btn btn-tiktok">
+                <i data-lucide="music"></i>
+                <span>TikTok</span>
+            </a>
+        </div>
+
+        <div class="footer">
+            اضغط على أي زر للمتابعة ✨
         </div>
     </div>
+
+    <script>
+        // لتشغيل الأيقونات
+        lucide.createIcons();
+    </script>
 </body>
 </html>
