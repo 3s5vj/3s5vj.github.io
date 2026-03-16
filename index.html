@@ -5,104 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3s5vj</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: #1a1a2e; /* نفس لون الخلفية في صورتك */
+        body { margin: 0; background: #1a1a2e; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: sans-serif; color: white; }
+        .container { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); padding: 40px; border-radius: 30px; text-align: center; width: 85%; max-width: 380px; border: 1px solid rgba(255, 255, 255, 0.1); }
+        
+        /* هذا الجزء هو "المقص" الحقيقي للحواف البيضاء */
+        .img-wrapper {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden; /* يمسح أي شيء خارج الدائرة */
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            font-family: sans-serif;
-            color: white;
+            border: none;
+            background: none;
         }
-
-        .container {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            padding: 40px;
-            border-radius: 30px;
-            text-align: center;
-            width: 85%;
-            max-width: 380px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* هذا هو التعديل الذي سيحل المشكلة نهائياً */
-        .profile-img-box {
-            width: 130px;
-            height: 130px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            overflow: hidden; /* يقطع أي حواف بيضاء خارج الدائرة */
-            border: none; /* يحذف الإطار الأبيض تماماً */
-            display: block;
-        }
-
-        .profile-img-box img {
+        .img-wrapper img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* يجعل الصورة تملأ الدائرة بوضوح */
+            object-fit: cover; /* يملأ الدائرة ويقص الحواف الزائدة */
         }
 
-        .username {
-            font-size: 42px;
-            font-weight: bold;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        .subtitle {
-            color: #ccc;
-            margin-bottom: 30px;
-            font-size: 16px;
-        }
-
-        .btn {
-            display: block;
-            text-decoration: none;
-            color: white;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 12px;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .btn-insta {
-            background: linear-gradient(45deg, #f09433, #bc1888);
-        }
-
-        .btn-tiktok {
-            background: #00f2fe;
-            color: #000;
-        }
-
-        .footer {
-            font-size: 13px;
-            color: #888;
-            margin-top: 20px;
-        }
+        .username { font-size: 42px; font-weight: bold; margin-bottom: 20px; }
+        .btn { display: block; text-decoration: none; color: white; padding: 15px; margin-bottom: 15px; border-radius: 12px; font-weight: bold; }
+        .btn-insta { background: linear-gradient(45deg, #f09433, #bc1888); }
+        .btn-tiktok { background: #00f2fe; color: #000; }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <div class="profile-img-box">
+        <div class="img-wrapper">
             <img src="1000005021.jpg" alt="">
         </div>
-
         <div class="username">𝓗 𖢱</div>
-        
-        <p class="subtitle">حساباتي الرسمية</p>
-
-        <div class="links">
-            <a href="https://instagram.com/3s5vj" class="btn btn-insta">Instagram</a>
-            <a href="https://tiktok.com/@3s5vj" class="btn btn-tiktok">TikTok</a>
-        </div>
-
-        <p class="footer">اضغط على أي زر للمتابعة ✨</p>
+        <a href="https://instagram.com/3s5vj" class="btn btn-insta">Instagram</a>
+        <a href="https://tiktok.com/@3s5vj" class="btn btn-tiktok">TikTok</a>
     </div>
-
 </body>
 </html>
