@@ -20,7 +20,7 @@
 
         .container {
             background: #141414;
-            padding: 40px;
+            padding: 50px 40px; /* زيادة المساحة العلوية بعد حذف الاسم */
             border-radius: 30px;
             text-align: center;
             width: 85%;
@@ -29,33 +29,27 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.8);
         }
 
-        /* حاوية الأيقونات الجديدة بدلاً من حرف H */
+        /* حاوية الأيقونات بالأعلى */
         .icons-header {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-bottom: 25px;
+            gap: 25px;
+            margin-bottom: 30px;
         }
 
         .icons-header i {
-            font-size: 45px;
-            color: #d4af37; /* لون ذهبي فخم للأيقونات */
+            font-size: 50px;
+            color: #d4af37; /* ذهبي ملكي */
             transition: 0.4s;
-            filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3));
-        }
-
-        .username {
-            font-size: 38px;
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: #fff;
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.3));
         }
 
         .subtitle {
             color: #888;
             margin-bottom: 35px;
-            font-size: 17px;
+            font-size: 18px;
             display: block;
+            letter-spacing: 1px;
         }
 
         .links {
@@ -68,55 +62,50 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             text-decoration: none;
             color: #fff;
-            padding: 16px;
+            padding: 18px;
             border-radius: 15px;
             font-weight: bold;
             font-size: 18px;
-            transition: 0.3s all ease-in-out;
+            transition: 0.3s all ease;
             border: none;
-            position: relative;
-            overflow: hidden;
         }
 
-        /* ألوان الأزرار الكاملة */
+        /* ألوان الأزرار الصافية */
         .btn-insta {
             background: #b81d5b; /* عنابي فخم */
         }
 
         .btn-tiktok {
             background: #2a2a2a; /* أسود كربوني */
-            border: 1px solid #444;
+            border: 1px solid #333;
         }
 
-        /* اقتراحي لتغيير لون/تأثير الضغط */
+        /* تأثير التوهج عند الضغط */
         .btn:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-            filter: brightness(1.3);
+            transform: translateY(-3px);
+            filter: brightness(1.2);
         }
 
         .btn-insta:hover {
-            box-shadow: 0 0 20px rgba(184, 29, 91, 0.4);
+            box-shadow: 0 5px 20px rgba(184, 29, 91, 0.4);
         }
 
         .btn-tiktok:hover {
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-            background: #333;
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
         }
 
         .footer {
             font-size: 14px;
-            color: #666;
-            margin-top: 35px;
+            color: #555;
+            margin-top: 40px;
             display: block;
         }
 
         .gold-text {
             color: #d4af37;
-            font-weight: bold;
         }
     </style>
 </head>
@@ -127,8 +116,6 @@
             <i class="fab fa-instagram"></i>
             <i class="fab fa-tiktok"></i>
         </div>
-
-        <div class="username">𝓗 𖢱</div>
         
         <span class="subtitle">حساباتي الرسمية</span>
 
