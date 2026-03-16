@@ -8,7 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: #0d0d0d; /* أسود عميق للفخامة */
+            background: #0d0d0d; /* أسود ملكي عميق */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -18,46 +18,44 @@
         }
 
         .container {
-            background: linear-gradient(145deg, #1a1a1a, #0a0a0a); /* تدرج أسود رمادي */
+            background: #141414; /* خلفية الواجهة أسود مطفي */
             padding: 40px;
-            border-radius: 25px;
+            border-radius: 30px;
             text-align: center;
             width: 85%;
             max-width: 380px;
-            border: 1px solid #333; /* إطار خفيف جداً */
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border: 1px solid #2a2a2a;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
         }
 
-        /* دائرة الحرف بتصميم فخم (أسود وذهبي) */
+        /* دائرة الحرف الذهبية */
         .profile-icon {
             width: 110px;
             height: 110px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-            border: 2px solid #c5a059; /* إطار ذهبي مطفي */
+            background: #1a1a1a;
+            border: 2px solid #d4af37; /* ذهبي أصلي */
             border-radius: 50%;
             margin: 0 auto 25px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 55px;
-            color: #c5a059; /* لون الحرف ذهبي */
-            text-shadow: 0 0 10px rgba(197, 160, 89, 0.3);
+            font-size: 60px;
+            color: #d4af37;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
         }
 
         .username {
-            font-size: 38px;
+            font-size: 40px;
             font-weight: bold;
             margin-bottom: 5px;
             color: #fff;
-            letter-spacing: 1px;
         }
 
         .subtitle {
             color: #888;
             margin-bottom: 35px;
-            font-size: 16px;
+            font-size: 17px;
             display: block;
-            text-transform: uppercase;
         }
 
         .links {
@@ -71,35 +69,39 @@
             text-decoration: none;
             color: #fff;
             padding: 16px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 17px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+            border: none;
         }
 
-        /* أزرار بألوان داكنة ورزنة */
+        /* ألوان كاملة ومتناسقة للأزرار */
         .btn-insta {
-            background: #262626; /* أسود كربوني */
-            border-left: 4px solid #c5a059; /* لمسة ذهبية */
+            background: #b81d5b; /* لون عنابي فخم متناسق مع الذهبي */
         }
 
         .btn-tiktok {
-            background: #262626;
-            border-left: 4px solid #fff; /* لمسة بيضاء */
+            background: #2a2a2a; /* أسود رصاصي غامق */
+            border: 1px solid #444;
         }
 
         .btn:hover {
-            background: #333;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            filter: brightness(1.2);
         }
 
+        /* النص السفلي بالعربي */
         .footer {
-            font-size: 13px;
-            color: #555;
+            font-size: 14px;
+            color: #666;
             margin-top: 35px;
-            letter-spacing: 1px;
+            display: block;
+        }
+
+        .gold-text {
+            color: #d4af37;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -118,7 +120,9 @@
         </div>
 
         <div class="footer">
-            PREMIUM ACCESS ✨
+             ✨ <span class="gold-text">وصول مميز</span> ✨
+             <br>
+             اضغط على أي زر للمتابعة
         </div>
     </div>
 
