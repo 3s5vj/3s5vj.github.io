@@ -13,60 +13,63 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: #1a0f0a; /* بني غامق ملكي */
-            font-family: 'Segoe UI', sans-serif;
+            background: #1a0f0a; /* بني غامق فخم */
+            font-family: 'Segoe UI', Tahoma, sans-serif;
             color: white;
             overflow: hidden;
         }
 
         .container {
-            background: rgba(43, 29, 23, 0.7);
-            backdrop-filter: blur(20px);
-            padding: 40px;
-            border-radius: 30px;
+            background: rgba(43, 29, 23, 0.8);
+            backdrop-filter: blur(15px);
+            padding: 45px 30px;
+            border-radius: 25px;
             text-align: center;
             width: 85%;
             max-width: 340px;
-            border: 1px solid rgba(255, 255, 255, 0.05); /* إطار شفاف ناعم جداً */
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
         }
 
         .profile-area {
-            display: flex;
-            justify-content: center;
             margin-bottom: 25px;
         }
 
-        /* الإطار المعدل بلون ذهبي وردي مطفي */
         .user-circle {
-            width: 85px;
-            height: 85px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            border: 3px solid #b76e79; /* ذهبي وردي مطفي (Matte Rose Gold) */
-            display: flex;
+            border: 2px solid #b76e79; /* ذهبي وردي خفيف */
+            display: inline-flex;
             justify-content: center;
             align-items: center;
-            background: transparent;
-            box-shadow: 0 0 15px rgba(183, 110, 121, 0.2);
+            color: #b76e79;
+            font-size: 35px;
+            box-shadow: 0 0 15px rgba(183, 110, 121, 0.1);
         }
 
-        .user-circle i {
-            font-size: 45px;
-            color: #b76e79; /* أيقونة شخص ذهبية وردية */
-        }
-
-        /* العنوان مع النجمات واللمعان الذهبي الأصلية */
-        .official-title {
-            display: block;
-            font-size: 19px;
-            font-weight: bold;
-            margin-bottom: 30px;
-            background: linear-gradient(90deg, #d4af37, #fcf6ba, #d4af37);
+        /* حاوية نصوص اللمعان - لتطبيق التوهج */
+        .shimmer-wrapper {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            background-size: 200% auto;
             -webkit-background-clip: text;
             background-clip: text;
-            color: transparent;
-            background-size: 200% auto;
-            animation: shineGold 3s infinite linear;
+            -webkit-text-fill-color: transparent;
+            animation: textShimmer 4s infinite linear;
+            font-weight: bold;
+        }
+
+        /* --- عنوان "حساباتي الرسمية" بلون فضي لامع ومستقل --- */
+        .official-title {
+            display: block;
+            margin-bottom: 35px;
+            font-size: 19px;
+            /* تدرج فضي-أبيض-فضي ساطع */
+            background-image: linear-gradient(to right, #a0a0a0 0%, #ffffff 50%, #a0a0a0 100%);
+            /* توهج فضي ناعم */
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
         }
 
         .links {
@@ -79,59 +82,55 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             text-decoration: none;
             color: white;
-            padding: 15px;
+            padding: 16px;
             border-radius: 12px;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 16px;
             transition: all 0.3s ease;
             border: none;
         }
 
-        /* توهج انستقرام عند الضغط */
         .btn-insta {
             background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
         }
-        .btn-insta:hover, .btn-insta:active {
-            box-shadow: 0 0 20px rgba(220, 39, 67, 0.8); 
-            filter: brightness(1.2);
+        .btn-insta:hover {
+            box-shadow: 0 0 20px rgba(220, 39, 67, 0.6);
             transform: translateY(-2px);
         }
 
-        /* توهج تيك توك أبيض ناعم عند الضغط */
         .btn-tiktok {
             background: #000;
             border: 1px solid #333;
         }
-        .btn-tiktok:hover, .btn-tiktok:active {
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-            filter: brightness(1.2);
+        .btn-tiktok:hover {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
             transform: translateY(-2px);
         }
 
         .footer {
+            margin-top: 40px;
             font-size: 13px;
             color: #8a7b75;
-            margin-top: 35px;
         }
 
-        .gold-shine {
+        /* --- عنوان "وصول مميز" بلون ذهبي لامع ومستقل --- */
+        .gold-feature {
             display: block;
-            font-weight: bold;
-            font-size: 15px;
             margin-top: 10px;
-            background: linear-gradient(90deg, #bf953f, #fcf6ba, #bf953f);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            background-size: 200% auto;
-            animation: shineGold 3s infinite linear;
+            font-size: 15px;
+            /* تدرج ذهبي-أبيض-ذهبي ساطع */
+            background-image: linear-gradient(to right, #d4af37 0%, #ffffff 50%, #d4af37 100%);
+            /* توهج ذهبي ناعم */
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
         }
 
-        @keyframes shineGold {
-            to { background-position: 200% center; }
+        /* أنيميشن اللمعان المتحرك */
+        @keyframes textShimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
         }
     </style>
 </head>
@@ -144,7 +143,7 @@
             </div>
         </div>
 
-        <span class="official-title">✨ حساباتي الرسمية ✨</span>
+        <span class="official-title shimmer-wrapper">✨ حساباتي الرسمية ✨</span>
 
         <div class="links">
             <a href="https://www.instagram.com/3s5vj" class="btn btn-insta" target="_blank">
@@ -157,7 +156,7 @@
 
         <div class="footer">
              اضغط للمتابعة
-             <span class="gold-shine">✨ وصول مميز ✨</span>
+             <span class="gold-feature shimmer-wrapper">✨ وصول مميز ✨</span>
         </div>
     </div>
 
