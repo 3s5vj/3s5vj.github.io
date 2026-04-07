@@ -100,7 +100,22 @@
             transform: scale(0.97);
         }
 
-        .btn::after {
+        /* --- الأزرار كما في كودك الأصلي تماماً --- */
+        .btn-insta {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+        
+        .btn-tiktok {
+            background: #000;
+            border: 1px solid #333;
+        }
+
+        /* --- زر الديسكورد مع الوميض البنفسجي فقط --- */
+        .btn-discord {
+            background: #5865F2;
+        }
+
+        .btn-discord::after {
             content: '';
             position: absolute;
             top: 0;
@@ -113,36 +128,8 @@
             transition: all 0.2s ease;
         }
 
-        /* انستقرام */
-        .btn-insta {
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-        }
-        .btn-insta:hover { filter: brightness(1.2); }
-        .btn-insta:active::after {
-            background: rgba(220, 39, 67, 0.8);
-            animation: flashNeon 0.3s ease-out;
-            opacity: 1;
-        }
-
-        /* تيك توك */
-        .btn-tiktok {
-            background: #000;
-            border: 1px solid #333;
-        }
-        .btn-tiktok:hover { filter: brightness(1.2); }
-        .btn-tiktok:active::after {
-            background: rgba(255, 255, 255, 0.6);
-            animation: flashNeon 0.3s ease-out;
-            opacity: 1;
-        }
-
-        /* ديسكورد - تمت إضافة الأنيميشن المتناسق مع اللون البنفسجي */
-        .btn-discord {
-            background: #5865F2; /* لون ديسكورد الرسمي */
-        }
-        .btn-discord:hover { filter: brightness(1.2); }
         .btn-discord:active::after {
-            background: rgba(88, 101, 242, 0.8); /* وميض متناسق مع لون ديسكورد */
+            background: rgba(88, 101, 242, 0.8); /* وميض بنفسجي للديسكورد فقط */
             animation: flashNeon 0.3s ease-out;
             opacity: 1;
         }
