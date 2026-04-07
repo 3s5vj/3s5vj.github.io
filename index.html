@@ -22,7 +22,7 @@
         .container {
             background: rgba(43, 29, 23, 0.7);
             backdrop-filter: blur(15px);
-            padding: 40px 30px 15px 30px; /* تصغير المساحة من الأسفل بناءً على طلبك السابق */
+            padding: 40px 30px 15px 30px; 
             border-radius: 30px;
             text-align: center;
             width: 85%;
@@ -53,7 +53,6 @@
             color: #b76e79;
         }
 
-        /* حاوية نصوص اللمعان - لتطبيق التوهج */
         .shimmer-wrapper {
             display: inline-block;
             position: relative;
@@ -66,14 +65,11 @@
             font-weight: bold;
         }
 
-        /* --- عنوان "حساباتي الرسمية" بلون فضي بلاتيني لامع ومستقل --- */
         .official-title {
             display: block;
             margin-bottom: 35px;
             font-size: 19px;
-            /* تدرج فضي بلاتيني ساطع */
             background-image: linear-gradient(to right, #a0a0a0 0%, #ffffff 50%, #a0a0a0 100%);
-            /* توهج فضي ناعم */
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
         }
 
@@ -94,15 +90,14 @@
             border-radius: 12px;
             font-weight: bold;
             font-size: 16px;
-            transition: all 0.2s ease; /* سرعة تفاعل ميكانيكية عند الضغط */
+            transition: all 0.2s ease;
             border: none;
             position: relative;
             overflow: hidden;
         }
 
-        /* تأثير الوميض والضغط (Active Effect) عند الضغط على الزر */
         .btn:active {
-            transform: scale(0.97); /* تصغير حجم الزر قليلاً جداً لإعطاء إحساس حقيقي بالضغط */
+            transform: scale(0.97);
         }
 
         .btn::after {
@@ -118,53 +113,36 @@
             transition: all 0.2s ease;
         }
 
-        /* لون انستقرام الأصلي المتدرج */
+        /* انستقرام */
         .btn-insta {
             background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
         }
-        
-        .btn-insta:hover {
-            box-shadow: 0 0 25px rgba(220, 39, 67, 0.8);
-            filter: brightness(1.2);
-        }
-
-        /* تأثير الوميض الساطع (Active Flash) عند الضغط لزر انستقرام */
+        .btn-insta:hover { filter: brightness(1.2); }
         .btn-insta:active::after {
-            background: rgba(220, 39, 67, 0.8); /* وميض أحمر مطابق للون الزر */
+            background: rgba(220, 39, 67, 0.8);
             animation: flashNeon 0.3s ease-out;
             opacity: 1;
         }
 
+        /* تيك توك */
         .btn-tiktok {
             background: #000;
             border: 1px solid #333;
         }
-        
-        .btn-tiktok:hover {
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
-            filter: brightness(1.2);
-        }
-
-        /* تأثير الوميض الساطع (Active Flash) عند الضغط لزر تيك توك */
+        .btn-tiktok:hover { filter: brightness(1.2); }
         .btn-tiktok:active::after {
-            background: rgba(255, 255, 255, 0.6); /* وميض أبيض ساطع مطابق للون التيك توك */
+            background: rgba(255, 255, 255, 0.6);
             animation: flashNeon 0.3s ease-out;
             opacity: 1;
         }
 
-        /* --- إضافة زر الديسكورد مع الأنيميشن مطابق تماماً بناءً على طلبك --- */
+        /* ديسكورد - تمت إضافة الأنيميشن المتناسق مع اللون البنفسجي */
         .btn-discord {
             background: #5865F2; /* لون ديسكورد الرسمي */
         }
-
-        .btn-discord:hover {
-            box-shadow: 0 0 25px rgba(88, 101, 242, 0.6);
-            filter: brightness(1.2);
-        }
-
-        /* تأثير الوميض الساطع (Active Flash) عند الضغط لزر الديسكورد - تم تغيير لون الوميض ليكون بنفسجياً مطابقاً للون الزر بناءً على طلبك */
+        .btn-discord:hover { filter: brightness(1.2); }
         .btn-discord:active::after {
-            background: rgba(88, 101, 242, 0.7); /* وميض بنفسجي مطابق للون الديسكورد */
+            background: rgba(88, 101, 242, 0.8); /* وميض متناسق مع لون ديسكورد */
             animation: flashNeon 0.3s ease-out;
             opacity: 1;
         }
@@ -180,13 +158,48 @@
             margin-top: 35px;
         }
 
-        /* --- عنوان "وصول مميز" بلون ذهبي لامع ومستقل --- */
         .gold-feature {
             display: block;
             margin-top: 10px;
             font-size: 15px;
-            /* تدرج ذهبي ساطع */
             background-image: linear-gradient(to right, #d4af37 0%, #ffffff 50%, #d4af37 100%);
-            /* توهج ذهبي ناعم */
             text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
-            
+        }
+
+        @keyframes textShimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile-area">
+            <div class="user-circle">
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+
+        <span class="official-title shimmer-wrapper">✨ حساباتي الرسمية ✨</span>
+
+        <div class="links">
+            <a href="https://www.instagram.com/3s5vj" class="btn btn-insta" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.tiktok.com/@3s5vj" class="btn btn-tiktok" target="_blank">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+            <a href="https://discord.com/users/i15.1" class="btn btn-discord" target="_blank">
+                <i class="fab fa-discord"></i> Discord
+            </a>
+        </div>
+
+        <div class="footer">
+             اضغط للمتابعة
+             <span class="gold-feature shimmer-wrapper">✨ وصول مميز ✨</span>
+        </div>
+    </div>
+
+</body>
+</html>
