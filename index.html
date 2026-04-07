@@ -41,7 +41,7 @@
             width: 85px;
             height: 85px;
             border-radius: 50%;
-            border: 3px solid #b76e79; /* ذهبي وردي مطفي */
+            border: 3px solid #b76e79; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -96,47 +96,31 @@
             overflow: hidden;
         }
 
+        /* تأثير الضغط الميكانيكي كما في كودك */
         .btn:active {
             transform: scale(0.97);
         }
 
-        /* --- الأزرار كما في كودك الأصلي تماماً --- */
+        /* انستقرام */
         .btn-insta {
             background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
         }
         
+        /* تيك توك */
         .btn-tiktok {
             background: #000;
             border: 1px solid #333;
         }
 
-        /* --- زر الديسكورد مع الوميض البنفسجي فقط --- */
+        /* ديسكورد - تمت إضافته بنفس منطق كودك */
         .btn-discord {
             background: #5865F2;
         }
 
-        .btn-discord::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: inherit;
-            pointer-events: none;
-            opacity: 0;
-            transition: all 0.2s ease;
-        }
-
-        .btn-discord:active::after {
-            background: rgba(88, 101, 242, 0.8); /* وميض بنفسجي للديسكورد فقط */
-            animation: flashNeon 0.3s ease-out;
-            opacity: 1;
-        }
-
-        @keyframes flashNeon {
-            0% { transform: scale(0.8); opacity: 1; }
-            100% { transform: scale(1.2); opacity: 0; }
+        /* هذا هو الجزء الذي كنت تقصده (بقاء اللون بعد الزيارة أو الضغط) */
+        .btn:focus, .btn:visited {
+            filter: brightness(1.2);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
 
         .footer {
