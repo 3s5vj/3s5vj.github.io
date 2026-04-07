@@ -3,78 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3s5vj</title>
+    <title>حساباتي الرسمية</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
-            margin: 0;
-            padding: 0;
+            background-color: #0f0a0a; /* لون الخلفية الغامق كما في الصورة */
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            background: #1a0f0a; /* بني غامق فخم */
-            font-family: 'Segoe UI', Tahoma, sans-serif;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: white;
-            overflow: hidden;
         }
 
         .container {
-            background: rgba(43, 29, 23, 0.7);
-            backdrop-filter: blur(15px);
-            padding: 40px 30px 15px 30px; /* تصغير المساحة من الأسفل بناءً على طلبك السابق */
-            border-radius: 30px;
+            background-color: #1c1616; /* لون البطاقة الداخلي */
+            padding: 40px 20px;
+            border-radius: 25px;
             text-align: center;
-            width: 85%;
+            width: 90%;
             max-width: 340px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .profile-area {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 25px;
-        }
-
-        .user-circle {
-            width: 85px;
-            height: 85px;
+        .profile-img {
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
-            border: 3px solid #b76e79; /* ذهبي وردي مطفي */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 0 15px rgba(183, 110, 121, 0.2);
+            border: 2px solid #e95959; /* لون الإطار حول الصورة */
+            margin-bottom: 15px;
+            object-fit: cover;
         }
 
-        .user-circle i {
-            font-size: 45px;
-            color: #b76e79;
-        }
-
-        /* حاوية نصوص اللمعان - لتطبيق التوهج */
-        .shimmer-wrapper {
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: textShimmer 4s infinite linear;
-            font-weight: bold;
-        }
-
-        /* --- عنوان "حساباتي الرسمية" بلون فضي بلاتيني لامع ومستقل --- */
-        .official-title {
-            display: block;
-            margin-bottom: 35px;
-            font-size: 19px;
-            /* تدرج فضي بلاتيني ساطع */
-            background-image: linear-gradient(to right, #a0a0a0 0%, #ffffff 50%, #a0a0a0 100%);
-            /* توهج فضي ناعم */
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        h2 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
         }
 
         .links {
@@ -83,128 +48,72 @@
             gap: 15px;
         }
 
-        .btn {
+        .link-card {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
+            padding: 14px;
+            border-radius: 12px;
             text-decoration: none;
             color: white;
-            padding: 15px;
-            border-radius: 12px;
             font-weight: bold;
-            font-size: 16px;
-            transition: all 0.2s ease; /* سرعة تفاعل ميكانيكية عند الضغط */
-            border: none;
-            position: relative;
-            overflow: hidden;
+            font-size: 17px;
+            transition: transform 0.2s ease; /* أنيميشن الضغط */
         }
 
-        /* تأثير الوميض والضغط (Active Effect) عند الضغط على الزر */
-        .btn:active {
-            transform: scale(0.97); /* تصغير حجم الزر قليلاً جداً لإعطاء إحساس حقيقي بالضغط */
+        /* أنيميشن عند الضغط */
+        .link-card:active {
+            transform: scale(0.92);
         }
 
-        .btn::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: inherit;
-            pointer-events: none;
-            opacity: 0;
-            transition: all 0.2s ease;
-        }
-
-        /* لون انستقرام الأصلي المتدرج */
-        .btn-insta {
+        /* ألوان الأزرار كما في الصورة */
+        .instagram {
             background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
         }
-        
-        .btn-insta:hover {
-            box-shadow: 0 0 25px rgba(220, 39, 67, 0.8);
-            filter: brightness(1.2);
-        }
 
-        /* تأثير الوميض الساطع (Active Flash) عند الضغط لزر انستقرام */
-        .btn-insta:active::after {
-            background: rgba(220, 39, 67, 0.8); /* وميض أحمر مطابق للون الزر */
-            animation: flashNeon 0.3s ease-out;
-            opacity: 1;
-        }
-
-        .btn-tiktok {
-            background: #000;
+        .tiktok {
+            background-color: #000000;
             border: 1px solid #333;
         }
-        
-        .btn-tiktok:hover {
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
-            filter: brightness(1.2);
+
+        .discord {
+            background-color: #5865F2; /* لون ديسكورد الرسمي */
         }
 
-        /* تأثير الوميض الساطع (Active Flash) عند الضغط لزر تيك توك */
-        .btn-tiktok:active::after {
-            background: rgba(255, 255, 255, 0.6); /* وميض أبيض ساطع مطابق للون التيك توك */
-            animation: flashNeon 0.3s ease-out;
-            opacity: 1;
+        .footer-text {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #777;
         }
 
-        @keyframes flashNeon {
-            0% { transform: scale(0.8); opacity: 1; }
-            100% { transform: scale(1.2); opacity: 0; }
-        }
-
-        .footer {
-            font-size: 13px;
-            color: #8a7b75;
-            margin-top: 35px;
-        }
-
-        /* --- عنوان "وصول مميز" بلون ذهبي لامع ومستقل --- */
-        .gold-feature {
-            display: block;
-            margin-top: 10px;
-            font-size: 15px;
-            /* تدرج ذهبي ساطع */
-            background-image: linear-gradient(to right, #d4af37 0%, #ffffff 50%, #d4af37 100%);
-            /* توهج ذهبي ناعم */
-            text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
-        }
-
-        /* أنيميشن اللمعان المتحرك */
-        @keyframes textShimmer {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
+        .sparkle {
+            color: #f09433;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="profile-area">
-            <div class="user-circle">
-                <i class="fas fa-user"></i>
-            </div>
-        </div>
-
-        <span class="official-title shimmer-wrapper">✨ حساباتي الرسمية ✨</span>
+        <img src="https://via.placeholder.com/90" alt="Profile" class="profile-img">
+        
+        <h2>✨ حساباتي الرسمية ✨</h2>
 
         <div class="links">
-            <a href="https://www.instagram.com/3s5vj" class="btn btn-insta" target="_blank">
+            <a href="https://www.instagram.com/i15.1" class="link-card instagram">
                 <i class="fab fa-instagram"></i> Instagram
             </a>
-            <a href="https://www.tiktok.com/@3s5vj" class="btn btn-tiktok" target="_blank">
+
+            <a href="https://www.tiktok.com/@i15.1" class="link-card tiktok">
                 <i class="fab fa-tiktok"></i> TikTok
+            </a>
+
+            <a href="https://discord.com/users/i15.1" class="link-card discord">
+                <i class="fab fa-discord"></i> Discord
             </a>
         </div>
 
-        <div class="footer">
-             اضغط للمتابعة
-             <span class="gold-feature shimmer-wrapper">✨ وصول مميز ✨</span>
-        </div>
+        <p class="footer-text">اضغط للمتابعة<br>✨ وصول مميز ✨</p>
     </div>
 
 </body>
