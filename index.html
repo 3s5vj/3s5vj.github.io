@@ -13,7 +13,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: #1a0f0a; /* بني غامق فخم */
+            background: #1a0f0a; 
             font-family: 'Segoe UI', Tahoma, sans-serif;
             color: white;
             overflow: hidden;
@@ -96,31 +96,57 @@
             overflow: hidden;
         }
 
-        /* تأثير الضغط الميكانيكي كما في كودك */
         .btn:active {
             transform: scale(0.97);
         }
 
-        /* انستقرام */
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            pointer-events: none;
+            opacity: 0;
+            transition: all 0.2s ease;
+        }
+
+        /* --- انستقرام: وميض بلون الزر (أحمر/برتقالي) --- */
         .btn-insta {
             background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
         }
-        
-        /* تيك توك */
+        .btn-insta:active::after {
+            background: rgba(220, 39, 67, 0.8); 
+            animation: flashNeon 0.3s ease-out;
+            opacity: 1;
+        }
+
+        /* --- تيك توك: وميض أبيض ساطع --- */
         .btn-tiktok {
             background: #000;
             border: 1px solid #333;
         }
+        .btn-tiktok:active::after {
+            background: rgba(255, 255, 255, 0.6); 
+            animation: flashNeon 0.3s ease-out;
+            opacity: 1;
+        }
 
-        /* ديسكورد - تمت إضافته بنفس منطق كودك */
+        /* --- ديسكورد: وميض بنفسجي مطابق للونه --- */
         .btn-discord {
             background: #5865F2;
         }
+        .btn-discord:active::after {
+            background: rgba(88, 101, 242, 0.8); 
+            animation: flashNeon 0.3s ease-out;
+            opacity: 1;
+        }
 
-        /* هذا هو الجزء الذي كنت تقصده (بقاء اللون بعد الزيارة أو الضغط) */
-        .btn:focus, .btn:visited {
-            filter: brightness(1.2);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        @keyframes flashNeon {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(1.2); opacity: 0; }
         }
 
         .footer {
