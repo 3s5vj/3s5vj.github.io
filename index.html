@@ -3,43 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حساباتي الرسمية</title>
+    <title>3s5vj</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
-            background-color: #0f0a0a; /* لون الخلفية الغامق كما في الصورة */
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            background: #1a0f0a; /* بني غامق فخم */
+            font-family: 'Segoe UI', Tahoma, sans-serif;
             color: white;
+            overflow: hidden;
         }
 
         .container {
-            background-color: #1c1616; /* لون البطاقة الداخلي */
-            padding: 40px 20px;
-            border-radius: 25px;
+            background: rgba(43, 29, 23, 0.7);
+            backdrop-filter: blur(15px);
+            padding: 40px 30px 15px 30px; 
+            border-radius: 30px;
             text-align: center;
-            width: 90%;
+            width: 85%;
             max-width: 340px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
         }
 
-        .profile-img {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            border: 2px solid #e95959; /* لون الإطار حول الصورة */
-            margin-bottom: 15px;
-            object-fit: cover;
-        }
-
-        h2 {
-            font-size: 20px;
+        .profile-area {
+            display: flex;
+            justify-content: center;
             margin-bottom: 25px;
-            letter-spacing: 1px;
+        }
+
+        .user-circle {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            border: 3px solid #b76e79; /* ذهبي وردي مطفي */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 15px rgba(183, 110, 121, 0.2);
+        }
+
+        .user-circle i {
+            font-size: 45px;
+            color: #b76e79;
+        }
+
+        .shimmer-wrapper {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textShimmer 4s infinite linear;
+            font-weight: bold;
+        }
+
+        .official-title {
+            display: block;
+            margin-bottom: 35px;
+            font-size: 19px;
+            background-image: linear-gradient(to right, #a0a0a0 0%, #ffffff 50%, #a0a0a0 100%);
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
         }
 
         .links {
@@ -48,72 +79,126 @@
             gap: 15px;
         }
 
-        .link-card {
+        .btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            padding: 14px;
-            border-radius: 12px;
+            gap: 10px;
             text-decoration: none;
             color: white;
+            padding: 15px;
+            border-radius: 12px;
             font-weight: bold;
-            font-size: 17px;
-            transition: transform 0.2s ease; /* أنيميشن الضغط */
+            font-size: 16px;
+            transition: all 0.2s ease;
+            border: none;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* أنيميشن عند الضغط */
-        .link-card:active {
-            transform: scale(0.92);
+        .btn:active {
+            transform: scale(0.97);
         }
 
-        /* ألوان الأزرار كما في الصورة */
-        .instagram {
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            pointer-events: none;
+            opacity: 0;
+            transition: all 0.2s ease;
+        }
+
+        /* انستقرام */
+        .btn-insta {
             background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
         }
+        .btn-insta:hover { filter: brightness(1.2); }
+        .btn-insta:active::after {
+            background: rgba(220, 39, 67, 0.8);
+            animation: flashNeon 0.3s ease-out;
+            opacity: 1;
+        }
 
-        .tiktok {
-            background-color: #000000;
+        /* تيك توك */
+        .btn-tiktok {
+            background: #000;
             border: 1px solid #333;
         }
-
-        .discord {
-            background-color: #5865F2; /* لون ديسكورد الرسمي */
+        .btn-tiktok:hover { filter: brightness(1.2); }
+        .btn-tiktok:active::after {
+            background: rgba(255, 255, 255, 0.6);
+            animation: flashNeon 0.3s ease-out;
+            opacity: 1;
         }
 
-        .footer-text {
-            margin-top: 30px;
-            font-size: 12px;
-            color: #777;
+        /* ديسكورد - الإضافة الجديدة */
+        .btn-discord {
+            background: #5865F2; /* لون ديسكورد الرسمي */
+        }
+        .btn-discord:hover { filter: brightness(1.2); }
+        .btn-discord:active::after {
+            background: rgba(255, 255, 255, 0.5);
+            animation: flashNeon 0.3s ease-out;
+            opacity: 1;
         }
 
-        .sparkle {
-            color: #f09433;
+        @keyframes flashNeon {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(1.2); opacity: 0; }
+        }
+
+        .footer {
+            font-size: 13px;
+            color: #8a7b75;
+            margin-top: 35px;
+        }
+
+        .gold-feature {
+            display: block;
+            margin-top: 10px;
+            font-size: 15px;
+            background-image: linear-gradient(to right, #d4af37 0%, #ffffff 50%, #d4af37 100%);
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+        }
+
+        @keyframes textShimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <img src="https://via.placeholder.com/90" alt="Profile" class="profile-img">
-        
-        <h2>✨ حساباتي الرسمية ✨</h2>
+        <div class="profile-area">
+            <div class="user-circle">
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+
+        <span class="official-title shimmer-wrapper">✨ حساباتي الرسمية ✨</span>
 
         <div class="links">
-            <a href="https://www.instagram.com/i15.1" class="link-card instagram">
+            <a href="https://www.instagram.com/3s5vj" class="btn btn-insta" target="_blank">
                 <i class="fab fa-instagram"></i> Instagram
             </a>
-
-            <a href="https://www.tiktok.com/@i15.1" class="link-card tiktok">
+            <a href="https://www.tiktok.com/@3s5vj" class="btn btn-tiktok" target="_blank">
                 <i class="fab fa-tiktok"></i> TikTok
             </a>
-
-            <a href="https://discord.com/users/i15.1" class="link-card discord">
+            <a href="https://discord.com/users/i15.1" class="btn btn-discord" target="_blank">
                 <i class="fab fa-discord"></i> Discord
             </a>
         </div>
 
-        <p class="footer-text">اضغط للمتابعة<br>✨ وصول مميز ✨</p>
+        <div class="footer">
+             اضغط للمتابعة
+             <span class="gold-feature shimmer-wrapper">✨ وصول مميز ✨</span>
+        </div>
     </div>
 
 </body>
