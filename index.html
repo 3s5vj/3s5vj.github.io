@@ -79,6 +79,7 @@
             gap: 15px;
         }
 
+        /* الزر الأساسي بتصميمك الميكانيكي */
         .btn {
             display: flex;
             align-items: center;
@@ -91,15 +92,16 @@
             font-weight: bold;
             font-size: 16px;
             transition: all 0.2s ease;
-            border: none;
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
 
         .btn:active {
             transform: scale(0.97);
         }
 
+        /* الأنيميشن (الوميض) المشترك */
         .btn::after {
             content: '';
             position: absolute;
@@ -111,37 +113,37 @@
             pointer-events: none;
             opacity: 0;
             transition: all 0.2s ease;
+            z-index: -1;
         }
 
-        /* --- انستقرام: وميض بلون الزر (أحمر/برتقالي) --- */
-        .btn-insta {
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-        }
+        /* انستقرام - وميض أحمر */
+        .btn-insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
         .btn-insta:active::after {
-            background: rgba(220, 39, 67, 0.8); 
+            background: rgba(220, 39, 67, 0.8);
             animation: flashNeon 0.3s ease-out;
             opacity: 1;
         }
 
-        /* --- تيك توك: وميض أبيض ساطع --- */
-        .btn-tiktok {
-            background: #000;
-            border: 1px solid #333;
-        }
+        /* تيك توك - وميض أبيض */
+        .btn-tiktok { background: #000; border: 1px solid #333; }
         .btn-tiktok:active::after {
-            background: rgba(255, 255, 255, 0.6); 
+            background: rgba(255, 255, 255, 0.6);
             animation: flashNeon 0.3s ease-out;
             opacity: 1;
         }
 
-        /* --- ديسكورد: وميض بنفسجي مطابق للونه --- */
-        .btn-discord {
-            background: #5865F2;
-        }
+        /* ديسكورد - وميض بنفسجي */
+        .btn-discord { background: #5865F2; }
         .btn-discord:active::after {
-            background: rgba(88, 101, 242, 0.8); 
+            background: rgba(88, 101, 242, 0.8);
             animation: flashNeon 0.3s ease-out;
             opacity: 1;
+        }
+
+        /* الاحتفاظ باللون بعد الضغط (الواقعية التي طلبتها) */
+        .btn:focus {
+            filter: brightness(1.2);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
         }
 
         @keyframes flashNeon {
@@ -187,7 +189,7 @@
             <a href="https://www.tiktok.com/@3s5vj" class="btn btn-tiktok" target="_blank">
                 <i class="fab fa-tiktok"></i> TikTok
             </a>
-            <a href="https://discord.com/users/i15.1" class="btn btn-discord" target="_blank">
+            <a href="https://discord.com/users/1202720277813133333" class="btn btn-discord" target="_blank">
                 <i class="fab fa-discord"></i> Discord
             </a>
         </div>
