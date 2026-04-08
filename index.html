@@ -13,7 +13,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: #1a0f0a; 
+            background: #1a0f0a; /* بني غامق فخم */
             font-family: 'Segoe UI', Tahoma, sans-serif;
             color: white;
             overflow: hidden;
@@ -41,7 +41,7 @@
             width: 85px;
             height: 85px;
             border-radius: 50%;
-            border: 3px solid #b76e79; 
+            border: 3px solid #b76e79; /* ذهبي وردي مطفي */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -95,13 +95,14 @@
             position: relative;
             overflow: hidden;
             z-index: 1;
+            border: none;
         }
 
         .btn:active {
             transform: scale(0.97);
         }
 
-        /* الأنيميشن (الوميض) المشترك */
+        /* عنصر الأنيميشن (الوميض) الأساسي */
         .btn::after {
             content: '';
             position: absolute;
@@ -116,27 +117,34 @@
             z-index: -1;
         }
 
-        /* انستقرام - وميض أحمر */
-        .btn-insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        /* --- انستقرام: تدرج أصلي وميض أحمر مائل للبرتقالي متناسق جداً --- */
+        .btn-insta {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
         .btn-insta:active::after {
-            background: rgba(220, 39, 67, 0.8);
-            animation: flashNeon 0.3s ease-out;
+            background: rgba(220, 39, 67, 0.8); /* وميض أحمر قوي مطابق للون الزر */
+            animation: flashNeonInsta 0.3s ease-out;
             opacity: 1;
         }
 
-        /* تيك توك - وميض أبيض */
-        .btn-tiktok { background: #000; border: 1px solid #333; }
+        /* --- تيك توك: أسود وميض أبيض ساطع --- */
+        .btn-tiktok {
+            background: #000;
+            border: 1px solid #333;
+        }
         .btn-tiktok:active::after {
-            background: rgba(255, 255, 255, 0.6);
-            animation: flashNeon 0.3s ease-out;
+            background: rgba(255, 255, 255, 0.6); /* وميض أبيض ناعم مطابق للتيك توك */
+            animation: flashNeonTiktok 0.3s ease-out;
             opacity: 1;
         }
 
-        /* ديسكورد - وميض بنفسجي */
-        .btn-discord { background: #5865F2; }
+        /* --- ديسكورد: بنفسجي وميض بنفسجي مطابق --- */
+        .btn-discord {
+            background: #5865F2; /* لون ديسكورد الرسمي */
+        }
         .btn-discord:active::after {
-            background: rgba(88, 101, 242, 0.8);
-            animation: flashNeon 0.3s ease-out;
+            background: rgba(88, 101, 242, 0.8); /* وميض بنفسجي قوي مطابق للديسكورد */
+            animation: flashNeonDiscord 0.3s ease-out;
             opacity: 1;
         }
 
@@ -146,7 +154,16 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
         }
 
-        @keyframes flashNeon {
+        /* أنيميشن الوميض الخاص بكل زر */
+        @keyframes flashNeonInsta {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(1.2); opacity: 0; }
+        }
+        @keyframes flashNeonTiktok {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(1.2); opacity: 0; }
+        }
+        @keyframes flashNeonDiscord {
             0% { transform: scale(0.8); opacity: 1; }
             100% { transform: scale(1.2); opacity: 0; }
         }
@@ -189,7 +206,7 @@
             <a href="https://www.tiktok.com/@3s5vj" class="btn btn-tiktok" target="_blank">
                 <i class="fab fa-tiktok"></i> TikTok
             </a>
-            <a href="https://discord.com/users/1202720277813133333" class="btn btn-discord" target="_blank">
+            <a href="https://discord.com/users/i15.1" class="btn btn-discord" target="_blank">
                 <i class="fab fa-discord"></i> Discord
             </a>
         </div>
