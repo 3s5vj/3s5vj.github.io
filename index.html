@@ -13,14 +13,14 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: #000000; /* أسود في حال تأخر تحميل الفيديو */
+            background: #000000; 
             font-family: 'Segoe UI', Tahoma, sans-serif;
             color: white;
             overflow: hidden;
             position: relative;
         }
 
-        /* تثبيت الفيديو ليكون خلفية متحركة بالكامل */
+        /* تثبيت فيديو الأنمي في الخلفية */
         .video-background {
             position: absolute;
             top: 50%;
@@ -34,27 +34,24 @@
             object-fit: cover;
         }
 
-        /* طبقة داكنة فوق الفيديو لضمان وضوح الكارت والنصوص */
+        /* طبقة تعتيم خفيفة جداً لضمان رؤية الأنمي بكامل تفاصيله وشفافيته */
         body::before {
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.65);
+            background: rgba(0, 0, 0, 0.4);
             z-index: 1;
         }
 
+        /* الكارت الأوسط تم جعله شفافاً بالكامل بدون أي خلفية ملونة */
         .container {
             position: relative;
-            z-index: 2; /* فوق الفيديو وطبقة التعتيم */
-            background: rgba(10, 10, 10, 0.82); /* أسود مانجا شفاف ومميز */
-            backdrop-filter: blur(20px);
+            z-index: 2; 
+            background: transparent; /* شفاف تماماً ليتداخل مع الأنمي */
             padding: 40px 30px 15px 30px; 
-            border-radius: 25px;
             text-align: center;
             width: 85%;
             max-width: 340px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.9);
         }
 
         .profile-area {
@@ -71,8 +68,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-            background: rgba(0,0,0,0.6);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            background: rgba(0,0,0,0.5); /* خلفية خفيفة جداً للدائرة الممثلة للمستخدم */
         }
 
         .user-circle i {
@@ -91,15 +88,15 @@
             font-weight: bold;
         }
 
-        /* عنوان CONNECT WITH ME (نصف أسود ونصف أبيض متحرك تماشياً مع المانجا) */
+        /* عنوان CONNECT WITH ME (حركة هادئة بنصف أسود ونصف أبيض) */
         .official-title {
             display: block;
             margin-bottom: 35px;
             font-size: 21px;
             letter-spacing: 1.5px;
             background-image: linear-gradient(to right, #111111 0%, #ffffff 50%, #111111 100%);
-            animation: textShimmerAnime 2.5s infinite linear;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+            animation: textShimmerAnime 6s infinite linear;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
         .links {
@@ -108,6 +105,7 @@
             gap: 15px;
         }
 
+        /* الأزرار العائمة */
         .btn {
             display: flex;
             align-items: center;
@@ -124,6 +122,7 @@
             position: relative;
             overflow: hidden;
             cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
 
         .btn:active {
@@ -135,12 +134,11 @@
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             border-radius: inherit;
-            pointer-events: none; /* حل مشكلة الروابط */
+            pointer-events: none; 
             opacity: 0;
             transition: all 0.2s ease;
         }
 
-        /* ألوان أزرارك الأصلية مع تأثيراتها المنفصلة */
         .btn-insta {
             background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
         }
@@ -151,8 +149,8 @@
         }
 
         .btn-tiktok {
-            background: #000;
-            border: 1px solid #333;
+            background: #000000;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         .btn-tiktok:active::after {
             background: rgba(255, 255, 255, 0.6);
@@ -176,18 +174,19 @@
 
         .footer {
             font-size: 13px;
-            color: #666;
+            color: #bbb;
             margin-top: 35px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
         }
 
-        /* الحفاظ على التوهج والتأثير الذهبي لـ وصول مميز */
+        /* التأثير الذهبي الفخم للوصول المميز */
         .gold-feature {
             display: block;
             margin-top: 10px;
             font-size: 15px;
             background-image: linear-gradient(to right, #d4af37 0%, #ffffff 50%, #d4af37 100%);
             animation: textShimmerGold 4s infinite linear;
-            text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
         }
 
         @keyframes textShimmerAnime {
@@ -204,7 +203,7 @@
 <body>
 
     <video autoplay loop muted playsinline class="video-background">
-        <source src="anime.mp4" type="video/mp4">
+        <source src="https://files.catbox.moe/u85i01.mp4" type="video/mp4">
     </video>
 
     <div class="container">
