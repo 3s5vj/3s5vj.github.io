@@ -37,16 +37,17 @@
             margin-bottom: 25px;
         }
 
+        /* إرجاع لون الخلفية والتدرج الوردي الفخم للدائرة والأيقونة كما كانت تماماً */
         .user-circle {
             width: 85px;
             height: 85px;
             border-radius: 50%;
-            border: 2px solid #ffffff; 
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-            background: rgba(0,0,0,0.4);
+            box-shadow: 0 0 20px rgba(220, 39, 67, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
         .user-circle i {
@@ -54,7 +55,7 @@
             color: #ffffff;
         }
 
-        /* كلاس لمعان الاسم الأصلي - لون أبيض ثابت مع حركة تدرج الضوء */
+        /* حركة الضياء الناعمة للاسم باللون الأبيض الثابت لمنع تحرك الخلفية وبدون نجوم */
         .official-title {
             display: block;
             margin-bottom: 35px;
@@ -62,12 +63,7 @@
             letter-spacing: 1.5px;
             font-weight: bold;
             color: #ffffff;
-            background: linear-gradient(to right, #ffffff 20%, #a3a3a3 40%, #ffffff 60%, #ffffff 80%);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: originalShimmer 2s infinite linear;
+            animation: whitePulseMove 3s infinite ease-in-out;
         }
 
         .links {
@@ -117,7 +113,7 @@
             margin-top: 35px;
         }
 
-        /* الوميض والحركة الأصلية لـ وصول مميز بدون تغيير السرعة */
+        /* الحركة الأصلية الهادئة والطبيعية لوصول مميز */
         .gold-feature {
             display: block;
             margin-top: 10px;
@@ -128,13 +124,19 @@
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: originalShimmer 2s infinite linear;
+            animation: originalGoldenShimmer 3s infinite linear;
             text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
             font-weight: bold;
         }
 
-        /* أنميشن اللمعان الموحد والمطابق للسرعة الأصلية المفضلة لديك */
-        @keyframes originalShimmer {
+        /* أنميشن وميض الضياء الأبيض المخصص للاسم */
+        @keyframes whitePulseMove {
+            0%, 100% { text-shadow: 0 0 4px rgba(255, 255, 255, 0.2); opacity: 0.9; }
+            50% { text-shadow: 0 0 16px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.4); opacity: 1; }
+        }
+
+        /* الأنميشن الأصلي الطبيعي بدون أي تسريع */
+        @keyframes originalGoldenShimmer {
             0% { background-position: 200% center; }
             100% { background-position: -200% center; }
         }
