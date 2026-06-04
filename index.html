@@ -34,4 +34,119 @@
         .profile-area {
             display: flex;
             justify-content: center;
-            
+            margin-bottom: 25px;
+        }
+
+        .user-circle {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            border: 2px solid #ffffff; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            background: rgba(0,0,0,0.4);
+        }
+
+        .user-circle i {
+            font-size: 45px;
+            color: #ffffff;
+        }
+
+        .official-title {
+            display: block;
+            margin-bottom: 35px;
+            font-size: 21px;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        .btn-insta {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        .btn-tiktok {
+            background: #000000;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-discord {
+            background: #5865F2;
+        }
+
+        .footer {
+            font-size: 13px;
+            color: #aaa;
+            margin-top: 35px;
+        }
+
+        .gold-feature {
+            display: block;
+            margin-top: 10px;
+            font-size: 15px;
+            color: #d4af37;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile-area">
+            <div class="user-circle">
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+
+        <span class="official-title">✨ CONNECT WITH ME ✨</span>
+
+        <div class="links">
+            <a href="https://www.instagram.com/3s5vj" class="btn btn-insta" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.tiktok.com/@3s5vj" class="btn btn-tiktok" target="_blank">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+            <a href="https://discord.com/users/i15.1" class="btn btn-discord" target="_blank">
+                <i class="fab fa-discord"></i> Discord
+            </a>
+        </div>
+
+        <div class="footer">
+             اضغط للمتابعة
+             <span class="gold-feature">✨ وصول مميز ✨</span>
+        </div>
+    </div>
+
+</body>
+</html>
