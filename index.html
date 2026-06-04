@@ -54,12 +54,27 @@
             color: #ffffff;
         }
 
+        /* الكلاس المشترك المسؤول عن تأثير اللمعان الحركي الأصلي */
+        .shimmer-wrapper {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        /* تم تطبيق الأنيميشن والمؤثر الحركي هنا مع الحفاظ على اللون الأبيض الأصلي للكلمة */
         .official-title {
             display: block;
             margin-bottom: 35px;
             font-size: 21px;
             letter-spacing: 1.5px;
-            font-weight: bold;
+            background-image: linear-gradient(to right, #ffffff 0%, #a8a8a8 50%, #ffffff 100%);
+            animation: textShimmerGold 2s infinite linear;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
         }
 
         .links {
@@ -109,13 +124,20 @@
             margin-top: 35px;
         }
 
+        /* حركة الوميض الذهبية الأصلية لـ وصول مميز */
         .gold-feature {
             display: block;
             margin-top: 10px;
             font-size: 15px;
-            color: #d4af37;
+            background-image: linear-gradient(to right, #d4af37 0%, #ffffff 50%, #d4af37 100%);
+            animation: textShimmerGold 2s infinite linear;
             text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-            font-weight: bold;
+        }
+
+        /* حركة اللمعان الموحدة */
+        @keyframes textShimmerGold {
+            0% { background-position: -100% center; }
+            100% { background-position: 100% center; }
         }
     </style>
 </head>
@@ -128,7 +150,7 @@
             </div>
         </div>
 
-        <span class="official-title">✨ CONNECT WITH ME ✨</span>
+        <span class="official-title shimmer-wrapper">CONNECT WITH ME</span>
 
         <div class="links">
             <a href="https://www.instagram.com/3s5vj" class="btn btn-insta" target="_blank">
@@ -144,7 +166,7 @@
 
         <div class="footer">
              اضغط للمتابعة
-             <span class="gold-feature">✨ وصول مميز ✨</span>
+             <span class="gold-feature shimmer-wrapper">✨ وصول مميز ✨</span>
         </div>
     </div>
 
