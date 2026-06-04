@@ -13,41 +13,29 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: #000000; 
+            /* تم تحويل الفيديو إلى GIF ليعمل على جيت هاب فوراً بدون حظر */
+            background: url('https://files.catbox.moe/k3i6v6.gif') no-repeat center center fixed;
+            background-size: cover;
             font-family: 'Segoe UI', Tahoma, sans-serif;
             color: white;
             overflow: hidden;
             position: relative;
         }
 
-        /* تثبيت فيديو الأنمي في الخلفية */
-        .video-background {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: 0;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-        }
-
-        /* طبقة تعتيم خفيفة جداً لضمان رؤية الأنمي بكامل تفاصيله وشفافيته */
+        /* طبقة تعتيم خفيفة جداً متناسقة مع ثيم الأنمي الأسود والأبيض */
         body::before {
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.45);
             z-index: 1;
         }
 
-        /* الكارت الأوسط تم جعله شفافاً بالكامل بدون أي خلفية ملونة */
+        /* الكارت الأوسط شفاف بالكامل لتظهر خلفية الأنمي المتحركة بوضوح */
         .container {
             position: relative;
             z-index: 2; 
-            background: transparent; /* شفاف تماماً ليتداخل مع الأنمي */
+            background: transparent; 
             padding: 40px 30px 15px 30px; 
             text-align: center;
             width: 85%;
@@ -69,7 +57,7 @@
             justify-content: center;
             align-items: center;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-            background: rgba(0,0,0,0.5); /* خلفية خفيفة جداً للدائرة الممثلة للمستخدم */
+            background: rgba(0,0,0,0.6); 
         }
 
         .user-circle i {
@@ -88,7 +76,7 @@
             font-weight: bold;
         }
 
-        /* عنوان CONNECT WITH ME (حركة هادئة بنصف أسود ونصف أبيض) */
+        /* عنوان CONNECT WITH ME بحركة هادئة واحترافية */
         .official-title {
             display: block;
             margin-bottom: 35px;
@@ -105,7 +93,6 @@
             gap: 15px;
         }
 
-        /* الأزرار العائمة */
         .btn {
             display: flex;
             align-items: center;
@@ -122,7 +109,7 @@
             position: relative;
             overflow: hidden;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
         .btn:active {
@@ -201,10 +188,6 @@
     </style>
 </head>
 <body>
-
-    <video autoplay loop muted playsinline class="video-background">
-        <source src="https://files.catbox.moe/u85i01.mp4" type="video/mp4">
-    </video>
 
     <div class="container">
         <div class="profile-area">
