@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3s5vj</title>
+    <title>3s5vj | Anime Style</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
@@ -13,22 +13,48 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: #1a0f0a; /* بني غامق فخم */
+            background: #000000; /* أسود في حال تأخر تحميل الفيديو */
             font-family: 'Segoe UI', Tahoma, sans-serif;
             color: white;
             overflow: hidden;
+            position: relative;
+        }
+
+        /* تثبيت الفيديو ليكون خلفية متحركة بالكامل */
+        .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        /* طبقة داكنة فوق الفيديو لضمان وضوح الكارت والنصوص */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: 1;
         }
 
         .container {
-            background: rgba(43, 29, 23, 0.7);
-            backdrop-filter: blur(15px);
+            position: relative;
+            z-index: 2; /* فوق الفيديو وطبقة التعتيم */
+            background: rgba(10, 10, 10, 0.82); /* أسود مانجا شفاف ومميز */
+            backdrop-filter: blur(20px);
             padding: 40px 30px 15px 30px; 
-            border-radius: 30px;
+            border-radius: 25px;
             text-align: center;
             width: 85%;
             max-width: 340px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.9);
         }
 
         .profile-area {
@@ -41,16 +67,17 @@
             width: 85px;
             height: 85px;
             border-radius: 50%;
-            border: 3px solid #b76e79; /* ذهبي وردي مطفي */
+            border: 2px solid #ffffff; 
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 0 15px rgba(183, 110, 121, 0.2);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            background: rgba(0,0,0,0.6);
         }
 
         .user-circle i {
             font-size: 45px;
-            color: #b76e79;
+            color: #ffffff;
         }
 
         .shimmer-wrapper {
@@ -61,16 +88,18 @@
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: textShimmer 4s infinite linear;
             font-weight: bold;
         }
 
+        /* عنوان CONNECT WITH ME (نصف أسود ونصف أبيض متحرك تماشياً مع المانجا) */
         .official-title {
             display: block;
             margin-bottom: 35px;
-            font-size: 19px;
-            background-image: linear-gradient(to right, #a0a0a0 0%, #ffffff 50%, #a0a0a0 100%);
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+            font-size: 21px;
+            letter-spacing: 1.5px;
+            background-image: linear-gradient(to right, #111111 0%, #ffffff 50%, #111111 100%);
+            animation: textShimmerAnime 2.5s infinite linear;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
         }
 
         .links {
@@ -79,7 +108,6 @@
             gap: 15px;
         }
 
-        /* الزر الأساسي بتصميمك الميكانيكي */
         .btn {
             display: flex;
             align-items: center;
@@ -92,103 +120,92 @@
             font-weight: bold;
             font-size: 16px;
             transition: all 0.2s ease;
+            border: none;
             position: relative;
             overflow: hidden;
-            z-index: 1;
-            border: none;
+            cursor: pointer;
         }
 
         .btn:active {
-            transform: scale(0.97);
+            transform: scale(0.95);
         }
 
-        /* عنصر الأنيميشن (الوميض) الأساسي */
         .btn::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             border-radius: inherit;
-            pointer-events: none;
+            pointer-events: none; /* حل مشكلة الروابط */
             opacity: 0;
             transition: all 0.2s ease;
-            z-index: -1;
         }
 
-        /* --- انستقرام: تدرج أصلي وميض أحمر مائل للبرتقالي متناسق جداً --- */
+        /* ألوان أزرارك الأصلية مع تأثيراتها المنفصلة */
         .btn-insta {
             background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
         }
         .btn-insta:active::after {
-            background: rgba(220, 39, 67, 0.8); /* وميض أحمر قوي مطابق للون الزر */
-            animation: flashNeonInsta 0.3s ease-out;
+            background: rgba(220, 39, 67, 0.8);
+            animation: flashNeon 0.3s ease-out;
             opacity: 1;
         }
 
-        /* --- تيك توك: أسود وميض أبيض ساطع --- */
         .btn-tiktok {
             background: #000;
             border: 1px solid #333;
         }
         .btn-tiktok:active::after {
-            background: rgba(255, 255, 255, 0.6); /* وميض أبيض ناعم مطابق للتيك توك */
-            animation: flashNeonTiktok 0.3s ease-out;
+            background: rgba(255, 255, 255, 0.6);
+            animation: flashNeon 0.3s ease-out;
             opacity: 1;
         }
 
-        /* --- ديسكورد: بنفسجي وميض بنفسجي مطابق --- */
         .btn-discord {
-            background: #5865F2; /* لون ديسكورد الرسمي */
+            background: #5865F2;
         }
         .btn-discord:active::after {
-            background: rgba(88, 101, 242, 0.8); /* وميض بنفسجي قوي مطابق للديسكورد */
-            animation: flashNeonDiscord 0.3s ease-out;
+            background: rgba(88, 101, 242, 0.8);
+            animation: flashNeon 0.3s ease-out;
             opacity: 1;
         }
 
-        /* الاحتفاظ باللون بعد الضغط (الواقعية التي طلبتها) */
-        .btn:focus {
-            filter: brightness(1.2);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-        }
-
-        /* أنيميشن الوميض الخاص بكل زر */
-        @keyframes flashNeonInsta {
-            0% { transform: scale(0.8); opacity: 1; }
-            100% { transform: scale(1.2); opacity: 0; }
-        }
-        @keyframes flashNeonTiktok {
-            0% { transform: scale(0.8); opacity: 1; }
-            100% { transform: scale(1.2); opacity: 0; }
-        }
-        @keyframes flashNeonDiscord {
+        @keyframes flashNeon {
             0% { transform: scale(0.8); opacity: 1; }
             100% { transform: scale(1.2); opacity: 0; }
         }
 
         .footer {
             font-size: 13px;
-            color: #8a7b75;
+            color: #666;
             margin-top: 35px;
         }
 
+        /* الحفاظ على التوهج والتأثير الذهبي لـ وصول مميز */
         .gold-feature {
             display: block;
             margin-top: 10px;
             font-size: 15px;
             background-image: linear-gradient(to right, #d4af37 0%, #ffffff 50%, #d4af37 100%);
-            text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+            animation: textShimmerGold 4s infinite linear;
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
         }
 
-        @keyframes textShimmer {
+        @keyframes textShimmerAnime {
+            0% { background-position: -100% center; }
+            100% { background-position: 100% center; }
+        }
+
+        @keyframes textShimmerGold {
             0% { background-position: -200% center; }
             100% { background-position: 200% center; }
         }
     </style>
 </head>
 <body>
+
+    <video autoplay loop muted playsinline class="video-background">
+        <source src="anime.mp4" type="video/mp4">
+    </video>
 
     <div class="container">
         <div class="profile-area">
@@ -197,7 +214,7 @@
             </div>
         </div>
 
-        <span class="official-title shimmer-wrapper">✨ حساباتي الرسمية ✨</span>
+        <span class="official-title shimmer-wrapper">CONNECT WITH ME</span>
 
         <div class="links">
             <a href="https://www.instagram.com/3s5vj" class="btn btn-insta" target="_blank">
