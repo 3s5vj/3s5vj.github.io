@@ -54,11 +54,10 @@
             color: #ffffff;
         }
 
-        /* الكلاس المشترك المسؤول عن تأثير اللمعان الحركي الأصلي */
+        /* الكلاس الموحد للمعان الحركي بدون تفريغ الشفافية المزعج */
         .shimmer-wrapper {
             display: inline-block;
             position: relative;
-            overflow: hidden;
             background-size: 200% auto;
             -webkit-background-clip: text;
             background-clip: text;
@@ -66,15 +65,15 @@
             font-weight: bold;
         }
 
-        /* تم تطبيق الأنيميشن والمؤثر الحركي هنا مع الحفاظ على اللون الأبيض الأصلي للكلمة */
+        /* حركة كلمة كونكت باللون الأبيض والرمادي الفاتح الساطع */
         .official-title {
             display: block;
             margin-bottom: 35px;
             font-size: 21px;
             letter-spacing: 1.5px;
-            background-image: linear-gradient(to right, #ffffff 0%, #a8a8a8 50%, #ffffff 100%);
-            animation: textShimmerGold 2s infinite linear;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            background-image: linear-gradient(to right, #ffffff 0%, #e0e0e0 25%, #ffffff 50%, #e0e0e0 75%, #ffffff 100%);
+            animation: textShimmerMove 2s infinite linear;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
         }
 
         .links {
@@ -124,20 +123,20 @@
             margin-top: 35px;
         }
 
-        /* حركة الوميض الذهبية الأصلية لـ وصول مميز */
+        /* حركة الوميض الذهبية الفخمة لـ وصول مميز */
         .gold-feature {
             display: block;
             margin-top: 10px;
             font-size: 15px;
             background-image: linear-gradient(to right, #d4af37 0%, #ffffff 50%, #d4af37 100%);
-            animation: textShimmerGold 2s infinite linear;
+            animation: textShimmerMove 2s infinite linear;
             text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
 
-        /* حركة اللمعان الموحدة */
-        @keyframes textShimmerGold {
-            0% { background-position: -100% center; }
-            100% { background-position: 100% center; }
+        /* الأنميشن الصحيح لتحريك اللمعان عبر الكلمات بالتساوي */
+        @keyframes textShimmerMove {
+            0% { background-position: 0% center; }
+            100% { background-position: -200% center; }
         }
     </style>
 </head>
