@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3s5vj | Anime Style</title>
+    <title>3s5vj | Anime Glitch Style</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* خلفية سوداء بالكامل مبرمجة بتأثيرات أنمي و Glitch متحرك */
         body {
             margin: 0;
             padding: 0;
@@ -13,25 +14,42 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            /* تم تحويل الفيديو إلى GIF ليعمل على جيت هاب فوراً بدون حظر */
-            background: url('https://files.catbox.moe/k3i6v6.gif') no-repeat center center fixed;
-            background-size: cover;
+            background: #000000; 
             font-family: 'Segoe UI', Tahoma, sans-serif;
             color: white;
             overflow: hidden;
             position: relative;
         }
 
-        /* طبقة تعتيم خفيفة جداً متناسقة مع ثيم الأنمي الأسود والأبيض */
+        /* التأثير الأول: خطوط المانجا العمودية المتحركة (مثل الفيديو الذي أرسلته) */
         body::before {
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.45);
-            z-index: 1;
+            background: linear-gradient(90deg, 
+                transparent 45%, 
+                rgba(255,255,255,0.15) 49%, 
+                rgba(255,255,255,0.25) 50%, 
+                rgba(255,255,255,0.15) 51%, 
+                transparent 55%);
+            background-size: 150px 100%;
+            animation: mangaLines 1.2s steps(6) infinite;
+            z-index: 0;
+            opacity: 0.6;
         }
 
-        /* الكارت الأوسط شفاف بالكامل لتظهر خلفية الأنمي المتحركة بوضوح */
+        /* التأثير الثاني: ومضات الخلل الرقمي والـ Glitch السريع في الخلفية */
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            z-index: 0;
+            animation: glitchOverlay 0.4s infinite;
+            pointer-events: none;
+        }
+
+        /* الكارت الأوسط شفاف تماماً بدون خلفية ليظهر تأثير الأنمي خلفه */
         .container {
             position: relative;
             z-index: 2; 
@@ -56,7 +74,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
             background: rgba(0,0,0,0.6); 
         }
 
@@ -76,7 +94,7 @@
             font-weight: bold;
         }
 
-        /* عنوان CONNECT WITH ME بحركة هادئة واحترافية */
+        /* عنوان CONNECT WITH ME بحركة هادئة بين الأبيض والأسود */
         .official-title {
             display: block;
             margin-bottom: 35px;
@@ -84,7 +102,7 @@
             letter-spacing: 1.5px;
             background-image: linear-gradient(to right, #111111 0%, #ffffff 50%, #111111 100%);
             animation: textShimmerAnime 6s infinite linear;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
         }
 
         .links {
@@ -109,7 +127,7 @@
             position: relative;
             overflow: hidden;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
         }
 
         .btn:active {
@@ -176,6 +194,18 @@
             text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
         }
 
+        /* حركات الأنيميشن المبرمجة بالكامل */
+        @keyframes mangaLines {
+            0% { background-position: 0px 0; }
+            100% { background-position: 300px 0; }
+        }
+
+        @keyframes glitchOverlay {
+            0% { background: rgba(255,255,255,0.01); }
+            50% { background: rgba(255,255,255,0.04); transform: skewX(1deg); }
+            100% { background: rgba(255,255,255,0.01); }
+        }
+
         @keyframes textShimmerAnime {
             0% { background-position: -100% center; }
             100% { background-position: 100% center; }
@@ -205,16 +235,5 @@
             <a href="https://www.tiktok.com/@3s5vj" class="btn btn-tiktok" target="_blank">
                 <i class="fab fa-tiktok"></i> TikTok
             </a>
-            <a href="https://discord.com/users/i15.1" class="btn btn-discord" target="_blank">
-                <i class="fab fa-discord"></i> Discord
-            </a>
-        </div>
-
-        <div class="footer">
-             اضغط للمتابعة
-             <span class="gold-feature shimmer-wrapper">✨ وصول مميز ✨</span>
-        </div>
-    </div>
-
-</body>
-</html>
+            <a href="https
+                
