@@ -54,7 +54,7 @@
             color: #ffffff;
         }
 
-        /* الكلاس المسؤول عن حركة اللمعان لكلمة CONNECT WITH ME بلونها الأبيض */
+        /* كلاس لمعان الاسم الأصلي - لون أبيض ثابت مع حركة تدرج الضوء */
         .official-title {
             display: block;
             margin-bottom: 35px;
@@ -62,15 +62,12 @@
             letter-spacing: 1.5px;
             font-weight: bold;
             color: #ffffff;
-            /* إنشاء تدرج لمعان أبيض ساطع يمر فوق الكلمة البيضاء */
-            background: linear-gradient(90deg, #ffffff 0%, #ffffff 40%, #ffffff 50%, #ffffff 60%, #ffffff 100%);
+            background: linear-gradient(to right, #ffffff 20%, #a3a3a3 40%, #ffffff 60%, #ffffff 80%);
             background-size: 200% auto;
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: whiteShimmerMove 2s infinite linear;
-            /* إضافة توهج خلفي ناعم متناسق مع الحركة */
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+            animation: originalShimmer 2s infinite linear;
         }
 
         .links {
@@ -120,38 +117,24 @@
             margin-top: 35px;
         }
 
-        /* حركة الوميض الذهبية الأصلية لـ وصول مميز */
+        /* الوميض والحركة الأصلية لـ وصول مميز بدون تغيير السرعة */
         .gold-feature {
             display: block;
             margin-top: 10px;
             font-size: 15px;
-            background: linear-gradient(90deg, #d4af37 0%, #ffffff 50%, #d4af37 100%);
+            color: #d4af37;
+            background: linear-gradient(to right, #d4af37 20%, #ffffff 40%, #d4af37 60%, #d4af37 80%);
             background-size: 200% auto;
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: goldShimmerMove 2s infinite linear;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+            animation: originalShimmer 2s infinite linear;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
             font-weight: bold;
         }
 
-        /* أنميشن اللمعان المخصص للون الأبيض */
-        @keyframes whiteShimmerMove {
-            0% {
-                background-position: 200% center;
-                filter: drop-shadow(0 0 2px rgba(255,255,255,0.3));
-            }
-            50% {
-                filter: drop-shadow(0 0 8px rgba(255,255,255,0.9));
-            }
-            100% {
-                background-position: -200% center;
-                filter: drop-shadow(0 0 2px rgba(255,255,255,0.3));
-            }
-        }
-
-        /* أنميشن اللمعان المخصص للوصول المميز الذهبي */
-        @keyframes goldShimmerMove {
+        /* أنميشن اللمعان الموحد والمطابق للسرعة الأصلية المفضلة لديك */
+        @keyframes originalShimmer {
             0% { background-position: 200% center; }
             100% { background-position: -200% center; }
         }
