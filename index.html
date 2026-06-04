@@ -54,26 +54,23 @@
             color: #ffffff;
         }
 
-        /* الكلاس الموحد للمعان الحركي بدون تفريغ الشفافية المزعج */
-        .shimmer-wrapper {
-            display: inline-block;
-            position: relative;
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: bold;
-        }
-
-        /* حركة كلمة كونكت باللون الأبيض والرمادي الفاتح الساطع */
+        /* الكلاس المسؤول عن حركة اللمعان لكلمة CONNECT WITH ME بلونها الأبيض */
         .official-title {
             display: block;
             margin-bottom: 35px;
             font-size: 21px;
             letter-spacing: 1.5px;
-            background-image: linear-gradient(to right, #ffffff 0%, #e0e0e0 25%, #ffffff 50%, #e0e0e0 75%, #ffffff 100%);
-            animation: textShimmerMove 2s infinite linear;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+            font-weight: bold;
+            color: #ffffff;
+            /* إنشاء تدرج لمعان أبيض ساطع يمر فوق الكلمة البيضاء */
+            background: linear-gradient(90deg, #ffffff 0%, #ffffff 40%, #ffffff 50%, #ffffff 60%, #ffffff 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: whiteShimmerMove 2s infinite linear;
+            /* إضافة توهج خلفي ناعم متناسق مع الحركة */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
         }
 
         .links {
@@ -123,19 +120,39 @@
             margin-top: 35px;
         }
 
-        /* حركة الوميض الذهبية الفخمة لـ وصول مميز */
+        /* حركة الوميض الذهبية الأصلية لـ وصول مميز */
         .gold-feature {
             display: block;
             margin-top: 10px;
             font-size: 15px;
-            background-image: linear-gradient(to right, #d4af37 0%, #ffffff 50%, #d4af37 100%);
-            animation: textShimmerMove 2s infinite linear;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            background: linear-gradient(90deg, #d4af37 0%, #ffffff 50%, #d4af37 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: goldShimmerMove 2s infinite linear;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+            font-weight: bold;
         }
 
-        /* الأنميشن الصحيح لتحريك اللمعان عبر الكلمات بالتساوي */
-        @keyframes textShimmerMove {
-            0% { background-position: 0% center; }
+        /* أنميشن اللمعان المخصص للون الأبيض */
+        @keyframes whiteShimmerMove {
+            0% {
+                background-position: 200% center;
+                filter: drop-shadow(0 0 2px rgba(255,255,255,0.3));
+            }
+            50% {
+                filter: drop-shadow(0 0 8px rgba(255,255,255,0.9));
+            }
+            100% {
+                background-position: -200% center;
+                filter: drop-shadow(0 0 2px rgba(255,255,255,0.3));
+            }
+        }
+
+        /* أنميشن اللمعان المخصص للوصول المميز الذهبي */
+        @keyframes goldShimmerMove {
+            0% { background-position: 200% center; }
             100% { background-position: -200% center; }
         }
     </style>
@@ -149,7 +166,7 @@
             </div>
         </div>
 
-        <span class="official-title shimmer-wrapper">CONNECT WITH ME</span>
+        <span class="official-title">CONNECT WITH ME</span>
 
         <div class="links">
             <a href="https://www.instagram.com/3s5vj" class="btn btn-insta" target="_blank">
@@ -165,7 +182,7 @@
 
         <div class="footer">
              اضغط للمتابعة
-             <span class="gold-feature shimmer-wrapper">✨ وصول مميز ✨</span>
+             <span class="gold-feature">✨ وصول مميز ✨</span>
         </div>
     </div>
 
