@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+# منع قوقل أو الروبوتات من دخول مجلدات حساسة إن وجدت مستقبلاً
+Disallow: /private/
+Disallow: /admin/
