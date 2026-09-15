@@ -76,7 +76,6 @@
         }
 
         /* ===== الحاوية ===== */
-        /* زاوية دوّارة للإطار الناري */
         @property --angle {
             syntax: '<angle>';
             initial-value: 0deg;
@@ -132,7 +131,6 @@
             to { --angle: 360deg; }
         }
 
-        /* خط علوي متوهج متحرك */
         .container::before {
             content: "";
             position: absolute;
@@ -154,7 +152,6 @@
             position: relative;
         }
 
-        /* صورة شخصية ثابتة عالية الجودة + إطار ناري دوّار منفصل */
         .user-circle {
             width: 96px; height: 96px;
             border-radius: 50%;
@@ -197,21 +194,6 @@
             z-index: 1;
         }
 
-        /* بديل يظهر فقط إذا لم تُحمّل الصورة */
-        .avatar-fallback {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 38px;
-            font-weight: bold;
-            color: #ff6a00;
-            text-shadow: 0 0 14px rgba(255, 60, 0, 0.6);
-            background: radial-gradient(circle at 50% 35%, #1a1a1e, #0c0c0e);
-            user-select: none;
-        }
-
         /* ===== الاسم / العنوان ===== */
         .shimmer-wrapper {
             display: inline-block;
@@ -240,7 +222,6 @@
             100% { background-position: 100% center; }
         }
 
-        /* منطقة الاسم مع الشرار الناري */
         .title-fire {
             position: relative;
             display: inline-block;
@@ -262,7 +243,6 @@
             100% { transform: translate(var(--dx, 0px), -70px) scale(0.2); opacity: 0; }
         }
 
-        /* CONNECT WITH ME - لومض جمري دافئ منسجم مع النار الحمراء */
         .subtitle {
             position: relative;
             display: block;
@@ -306,7 +286,6 @@
             cursor: pointer;
         }
 
-        /* شريط ضوئي يمر عند التمرير */
         .btn::after {
             content: "";
             position: absolute;
@@ -339,7 +318,6 @@
 
         .btn .label { flex: 1; text-align: center; }
 
-        /* توهج خاص بكل منصة عند التمرير */
         .btn-insta:hover {
             border-color: rgba(220, 39, 102, 0.6);
             box-shadow: 0 0 20px rgba(188, 24, 136, 0.25);
@@ -361,7 +339,6 @@
             letter-spacing: 1px;
         }
 
-        /* اضغط للمتابعة - لهب ناري متحرك مع شرار */
         .press-line {
             position: relative;
             display: block;
@@ -377,7 +354,6 @@
             filter: drop-shadow(0 0 6px rgba(255, 45, 0, 0.5)) drop-shadow(0 0 16px rgba(255, 0, 0, 0.25));
         }
 
-        /* كلمة وصول مميز - لهب ناري متحرك مع شرار */
         .gold-feature {
             position: relative;
             display: inline-block;
@@ -391,11 +367,6 @@
             -webkit-text-fill-color: transparent;
             animation: fireShimmer 2.2s infinite linear;
             filter: drop-shadow(0 0 8px rgba(255, 45, 0, 0.55)) drop-shadow(0 0 20px rgba(255, 0, 0, 0.3));
-        }
-
-        @keyframes shimmer {
-            0%   { background-position: -100% center; }
-            100% { background-position: 100% center; }
         }
 
         @media (max-width: 380px) {
@@ -418,7 +389,7 @@
             <div class="user-circle">
                 <div class="fire-ring"></div>
                 <div class="user-inner">
-                    <img src="profile.jpg" alt="avatar">
+                    <img src="https://i.postimg.cc/jjXKydtT/IMG-8357.jpg" alt="avatar">
                 </div>
             </div>
         </div>
@@ -439,7 +410,7 @@
                 <span class="label">TikTok</span>
                 <i class="fas fa-chevron-left arrow"></i>
             </a>
-            <a href="https://discord.com/users/1421180443654488074" class="btn btn-discord" target="_blank">
+            <a href="https://www.discord.com/users/1421180443654488074" class="btn btn-discord" target="_blank">
                 <i class="fab fa-discord"></i>
                 <span class="label">Discord</span>
                 <i class="fas fa-chevron-left arrow"></i>
@@ -453,7 +424,6 @@
     </div>
 
     <script>
-        // توليد جزيئات خفيفة تطفو كالغبار
         const particles = document.getElementById('particles');
         for (let i = 0; i < 18; i++) {
             const p = document.createElement('span');
@@ -468,7 +438,6 @@
             particles.appendChild(p);
         }
 
-        // شرار ناري متصاعد من عنصر محدد
         function spawnEmber(container) {
             const e = document.createElement('span');
             e.className = 'ember';
@@ -494,7 +463,8 @@
         setInterval(() => spawnEmber(footerFire), 380);
         spawnEmber(footerFire);
         setInterval(() => spawnEmber(pressFire), 380);
-        spawnEmber(pressFire);
+        spawnEpressFire = pressFire;
+        setInterval(() => spawnEmber(pressFire), 380);
     </script>
 
 </body>
